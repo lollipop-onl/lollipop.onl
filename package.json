@@ -1,0 +1,8 @@
+{
+  "name": "simochee.net",
+  "version": "1.0.0",
+  "description": "simochee's site",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@8.6.12"
+}
