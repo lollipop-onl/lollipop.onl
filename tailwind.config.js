@@ -1,5 +1,5 @@
 import typography from "@tailwindcss/typography";
-import { family as ZenMaruGothic } from "@fontsource/zen-maru-gothic/metadata.json" assert { type: "json" };
+import { family as IBMPlexSansJP } from "@fontsource/ibm-plex-sans-jp/metadata.json" assert { type: "json" };
 import { addDynamicIconSelectors } from "@iconify/tailwind";
 
 /** @type {import('tailwindcss').Config} */
@@ -7,7 +7,7 @@ const config = {
   content: ["./src/**/*.{svelte,ts,html}"],
   theme: {
     fontFamily: {
-      body: [ZenMaruGothic, "sans-serif"],
+      body: [IBMPlexSansJP, "sans-serif"],
     },
     extend: {
       colors: {

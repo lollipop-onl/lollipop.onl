@@ -1,4 +1,5 @@
 <script>
+  import '@fontsource/ibm-plex-sans-jp';
   import 'tailwindcss/tailwind.css';
 </script>
 

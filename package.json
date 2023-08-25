@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource/ibm-plex-sans-jp": "^5.0.7",
     "@fontsource/zen-maru-gothic": "^5.0.7",
     "@iconify-json/carbon": "^1.1.20",
     "@iconify/tailwind": "^0.1.3",
