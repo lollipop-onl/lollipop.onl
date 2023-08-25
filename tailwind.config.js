@@ -21,6 +21,7 @@ const config = {
           title: "#E7EDF4",
           subtitle: "#C4D4E3",
         },
+        label: "#3A536B",
         brand: "#3294F8",
       },
     },
