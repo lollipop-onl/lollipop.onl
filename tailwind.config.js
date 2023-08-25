@@ -4,19 +4,24 @@ import { addDynamicIconSelectors } from "@iconify/tailwind";
 
 /** @type {import('tailwindcss').Config} */
 const config = {
-  content: ["./src/**/*.{svelte,ts}"],
+  content: ["./src/**/*.{svelte,ts,html}"],
   theme: {
     fontFamily: {
       body: [ZenMaruGothic, "sans-serif"],
     },
     extend: {
       colors: {
-        background: "#0F172A",
-        foreground: "#1E293B",
-        link: {
-          DEFAULT: "#38bdf8",
+        base: {
+          DEFAULT: "#071422",
+          profile: "#0B1B2B",
+          post: "#112131",
         },
-        body: "#eee",
+        prose: {
+          body: "#AFC2D4",
+          title: "#E7EDF4",
+          subtitle: "#C4D4E3",
+        },
+        brand: "#3294F8",
       },
     },
   },
