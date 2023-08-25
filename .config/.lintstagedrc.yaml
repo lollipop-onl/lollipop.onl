@@ -1,2 +1,2 @@
-"*.{astro,ts,js,cjs,md,json,yml,yaml}":
+"*.{svelte,ts,js,cjs,md,json,yml,yaml}":
   - prettier --write --log-level warn --find-config-path .config
