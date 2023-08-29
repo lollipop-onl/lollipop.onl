@@ -27,7 +27,7 @@ export const Frame: React.FC<Props> = ({ origin, children }) => {
       </div>
       <ul>
         {Array.from({ length: count }).map((_, i) => (
-          <li key={i}>{i}</li>
+          <li key={i}>i:{i}</li>
         ))}
       </ul>
     </div>
