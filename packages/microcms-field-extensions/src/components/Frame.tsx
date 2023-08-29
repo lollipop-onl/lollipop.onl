@@ -9,7 +9,6 @@ type Props = {
 };
 
 export const Frame: React.FC<Props> = ({ origin, children }) => {
-  const [count, setCount] = useState(0);
   const [fieldId, setFieldId] = useState<string>();
   const [message, setMessage] = useState<any>();
   const [ref, { height }] = useMeasure<HTMLDivElement>();
@@ -50,20 +49,7 @@ export const Frame: React.FC<Props> = ({ origin, children }) => {
         message,
       }}
     >
-      <div ref={ref}>
-        {children}
-        <pre>height: {height}px</pre>
-        <div>
-          <button onClick={() => setCount((count) => count + 1)}>
-            Add Item
-          </button>
-        </div>
-        <ul>
-          {Array.from({ length: count }).map((_, i) => (
-            <li key={i}>i:{i}</li>
-          ))}
-        </ul>
-      </div>
+      <div ref={ref}>{children}</div>
     </FieldExtensionContext.Provider>
   );
 };

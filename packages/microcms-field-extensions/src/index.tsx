@@ -21,8 +21,12 @@ export const render = (rootEl: HTMLElement | null) => {
       ),
       children: [
         {
-          path: 'hello',
-          element: <p>world</p>,
+          path: 'thumbnail',
+          element: <p>Thumbnail</p>,
+        },
+        {
+          path: 'markdown',
+          element: <p>Markdown</p>,
         },
         {
           path: '*',
