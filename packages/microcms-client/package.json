@@ -1,0 +1,16 @@
+{
+  "name": "microcms-client",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "pnpm build --watch"
+  },
+  "devDependencies": {
+    "@tsconfig/node20": "^20.1.2",
+    "typescript": "^5.2.2"
+  }
+}

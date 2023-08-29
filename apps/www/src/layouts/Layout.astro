@@ -1,5 +1,12 @@
 ---
 import '@fontsource/zen-maru-gothic';
+
+type Props = {
+  title?: string;
+};
+const { title } = Astro.props;
+
+const SITE_NAME = 'よなよなこーど';
 ---
 
 <!DOCTYPE html>
@@ -8,6 +15,10 @@ import '@fontsource/zen-maru-gothic';
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=devise-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
+    <title>
+      {title ? `${title} | ${SITE_NAME}` : `${SITE_NAME} - しもちぃの個人ブログ`}
+    </title>
+    <link rel="icon" href="/favicon.ico">
   </head>
   <body class="font-body">
     <slot />
