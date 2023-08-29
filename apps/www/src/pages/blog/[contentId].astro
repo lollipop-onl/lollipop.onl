@@ -1,0 +1,25 @@
+---
+import Layout from "@layouts/Layout.astro";
+import type { GetStaticPaths } from "astro";
+import { getBlogEntities } from 'microcms-client';
+
+export const getStaticPaths = (async () => {
+  const { contents } = await getBlogEntities();
+  
+  return contents.map((content) => ({
+    params: {
+      contentId: content.id
+    },
+    props: {
+      content,
+    }
+  }))
+}) satisfies GetStaticPaths;
+
+type Props = Awaited<ReturnType<typeof getStaticPaths>>[number]['props'];
+const { content } = Astro.props;
+---
+
+<Layout>
+  <h1>{content.title}</h1>
+</Layout>

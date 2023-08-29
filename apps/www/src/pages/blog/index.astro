@@ -10,8 +10,10 @@ const { contents, totalCount } = await getBlogEntities();
   <p>Hello World.</p>
   <p>total: {totalCount}</p>
   <ul>
-    {contents.map(({ title }) => (
-      <li>{title}</li>
+    {contents.map(({ id, title }) => (
+      <li>
+        <a href={`/blog/${id}`}>{title}</a>
+      </li>
     ))}
   </ul>
 </Layout>
