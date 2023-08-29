@@ -4,7 +4,8 @@
   "private": true,
   "description": "simochee's personal website",
   "scripts": {
-    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "dev": "turbo run dev --no-cache --continue",
     "format": "prettier --log-level warn --write ."
   },
   "devDependencies": {
