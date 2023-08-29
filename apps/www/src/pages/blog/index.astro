@@ -1,8 +1,17 @@
 ---
-import { hello } from 'microcms-client';
+import { getBlogEntities } from 'microcms-client';
 import Layout from '@layouts/Layout.astro';
+
+const { contents, totalCount } = await getBlogEntities();
 ---
 
 <Layout>
-  <p>{hello}</p>
+  <pre>{import.meta.env.MICROCMS_API_KEY}</pre>
+  <p>Hello World.</p>
+  <p>total: {totalCount}</p>
+  <ul>
+    {contents.map(({ title }) => (
+      <li>{title}</li>
+    ))}
+  </ul>
 </Layout>

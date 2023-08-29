@@ -5,10 +5,11 @@
   "description": "simochee's personal website",
   "scripts": {
     "build": "turbo run build",
-    "dev": "turbo run dev --no-cache --continue",
+    "dev": "dotenv -- turbo run dev --no-cache",
     "format": "prettier --log-level warn --write ."
   },
   "devDependencies": {
+    "dotenv-cli": "^7.3.0",
     "prettier": "^3.0.2",
     "prettier-plugin-astro": "^0.12.0",
     "prettier-plugin-packagejson": "^2.4.5",

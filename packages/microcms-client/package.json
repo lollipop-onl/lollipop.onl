@@ -9,8 +9,12 @@
     "build": "tsc",
     "dev": "pnpm build --watch"
   },
+  "dependencies": {
+    "microcms-js-sdk": "^2.5.0"
+  },
   "devDependencies": {
-    "@tsconfig/node20": "^20.1.2",
+    "@types/node": "^20.5.7",
+    "tsconfigs": "workspace:^",
     "typescript": "^5.2.2"
   }
 }
