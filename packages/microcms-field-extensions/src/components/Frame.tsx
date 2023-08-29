@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { setupFieldExtension } from 'microcms-field-extension-api';
 import { useMeasure } from 'react-use';
+import { FieldExtensionContext } from '@hooks/useFieldExtension';
 
 type Props = {
   origin: string;
@@ -10,6 +11,7 @@ type Props = {
 export const Frame: React.FC<Props> = ({ origin, children }) => {
   const [count, setCount] = useState(0);
   const [fieldId, setFieldId] = useState<string>();
+  const [message, setMessage] = useState<any>();
   const [ref, { height }] = useMeasure<HTMLDivElement>();
 
   useEffect(() => {
@@ -17,6 +19,7 @@ export const Frame: React.FC<Props> = ({ origin, children }) => {
       origin,
       onDefaultData({ data }) {
         setFieldId(data.id);
+        setMessage(data.message);
       },
     });
   }, []);
@@ -38,16 +41,27 @@ export const Frame: React.FC<Props> = ({ origin, children }) => {
   }, [fieldId, height]);
 
   return (
-    <div ref={ref}>
-      {children}
-      <div>
-        <button onClick={() => setCount((count) => count + 1)}>Add Item</button>
+    <FieldExtensionContext.Provider
+      value={{
+        id: fieldId,
+        origin,
+        message,
+      }}
+    >
+      <div ref={ref}>
+        {children}
+        <pre>height: {height}px</pre>
+        <div>
+          <button onClick={() => setCount((count) => count + 1)}>
+            Add Item
+          </button>
+        </div>
+        <ul>
+          {Array.from({ length: count }).map((_, i) => (
+            <li key={i}>i:{i}</li>
+          ))}
+        </ul>
       </div>
-      <ul>
-        {Array.from({ length: count }).map((_, i) => (
-          <li key={i}>i:{i}</li>
-        ))}
-      </ul>
-    </div>
+    </FieldExtensionContext.Provider>
   );
 };
