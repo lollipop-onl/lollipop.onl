@@ -17,6 +17,8 @@ export const Frame: React.FC<Props> = ({ origin, children }) => {
   useEffect(() => {
     return setupFieldExtension({
       origin,
+      height: 0,
+      width: '100%',
       onDefaultData({ data }) {
         setFieldId(data.id);
         setMessage(data.message);
