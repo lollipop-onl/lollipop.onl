@@ -9,5 +9,8 @@ import Layout from '@layouts/Layout.astro';
 </script>
 
 <Layout>
-  <div id="root" />
+  <div 
+    id="root" 
+    data-origin={`https://${process.env.MICROCMS_SERVICE_DOMAIN}.microcms.io`} 
+  />
 </Layout>
