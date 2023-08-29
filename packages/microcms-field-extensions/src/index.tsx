@@ -1,6 +1,7 @@
 import { Frame } from '@components/Frame';
 import { createRoot } from 'react-dom/client';
 import { createHashRouter, Outlet, RouterProvider } from 'react-router-dom';
+import { Editor } from '@monaco-editor/react';
 
 export const render = (rootEl: HTMLElement | null) => {
   if (!rootEl) return;
@@ -26,7 +27,9 @@ export const render = (rootEl: HTMLElement | null) => {
         },
         {
           path: 'markdown',
-          element: <p>Markdown</p>,
+          element: (
+            <Editor defaultLanguage="markdown" defaultValue="# Hello World" />
+          ),
         },
         {
           path: '*',
