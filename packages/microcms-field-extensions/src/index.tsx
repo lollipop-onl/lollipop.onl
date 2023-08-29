@@ -29,6 +29,7 @@ export const render = (rootEl: HTMLElement | null) => {
           path: 'markdown',
           element: (
             <Editor
+              height={500}
               defaultLanguage="markdown"
               defaultValue="# Hello World\n\nthis is example value."
             />
