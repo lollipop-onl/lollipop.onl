@@ -9,15 +9,33 @@ type Props = {
 
 export const Frame: React.FC<Props> = ({ origin, children }) => {
   const [count, setCount] = useState(0);
+  const [fieldId, setFieldId] = useState<string>();
   const [ref, { height }] = useMeasure<HTMLDivElement>();
 
   useEffect(() => {
     return setupFieldExtension({
       origin,
-      width: '100%',
-      height,
+      onDefaultData({ data }) {
+        setFieldId(data.id);
+      },
     });
-  }, [height]);
+  }, []);
+
+  useEffect(() => {
+    if (!fieldId) return;
+
+    window.parent.postMessage(
+      {
+        id: fieldId,
+        action: 'MICROCMS_UPDATE_STYLE',
+        message: {
+          height,
+          width: '100%',
+        },
+      },
+      origin,
+    );
+  }, [fieldId, height]);
 
   return (
     <div ref={ref}>
