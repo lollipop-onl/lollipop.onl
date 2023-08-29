@@ -1,6 +1,0 @@
-/dist
-/node_modules
-/.svelte-kit
-*.log
-.env
-.DS_Store
