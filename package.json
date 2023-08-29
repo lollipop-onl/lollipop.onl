@@ -4,6 +4,7 @@
   "private": true,
   "description": "simochee's personal website",
   "scripts": {
+    "dev": "pnpm --filter=www run dev",
     "format": "prettier --log-level warn --write ."
   },
   "devDependencies": {
