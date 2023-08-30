@@ -15,7 +15,10 @@ export const Editor: React.FC<Props> = () => {
   }, [message]);
 
   return (
-    <div style={{ height: `${contentHeight}px` }}>
+    <div
+      className="overflow-hidden rounded border"
+      style={{ height: `${contentHeight}px` }}
+    >
       <MonacoEditor
         defaultLanguage="markdown"
         defaultValue={(message?.data as string) ?? ''}
@@ -23,6 +26,7 @@ export const Editor: React.FC<Props> = () => {
           minimap: { enabled: false },
           lineNumbers: 'off',
           wordWrap: 'on',
+          scrollbar: { vertical: 'hidden', horizontal: 'hidden' },
           scrollBeyondLastLine: false,
         }}
         onMount={(editor) => {
