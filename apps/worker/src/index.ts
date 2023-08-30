@@ -1,5 +1,6 @@
 import { Hono } from 'hono';
 import { poweredBy } from 'hono/powered-by';
+import { cors } from 'hono/cors';
 
 const app = new Hono<{
   Bindings: {
@@ -9,6 +10,7 @@ const app = new Hono<{
 }>();
 
 app.use('*', poweredBy());
+app.use('*', cors());
 
 app.put('/gyazo/upload', async (c) => {
   const blob = await c.req.blob();
