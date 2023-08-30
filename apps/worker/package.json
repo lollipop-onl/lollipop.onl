@@ -1,0 +1,19 @@
+{
+  "name": "worker",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "deploy": "wrangler publish $npm_package_main",
+    "dev": "wrangler dev $npm_package_main"
+  },
+  "dependencies": {
+    "hono": "^3.5.6"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20230821.0",
+    "@tsconfig/node20": "^20.1.2",
+    "wrangler": "^3.6.0"
+  }
+}
