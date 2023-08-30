@@ -19,6 +19,14 @@ const SITE_NAME = 'よなよなこーど';
       {title ? `${title} | ${SITE_NAME}` : `${SITE_NAME} - しもちぃの個人ブログ`}
     </title>
     <link rel="icon" href="/favicon.ico">
+    <script type="text/partytown" src="https://www.googletagmanager.com/gtag/js?id=G-K8S4SGNN6L"></script>
+    <script type="text/partytown">
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-K8S4SGNN6L');
+    </script>
   </head>
   <body class="font-body">
     <slot />
