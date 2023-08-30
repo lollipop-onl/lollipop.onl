@@ -1,16 +1,8 @@
 ---
+import { FieldExtensions } from 'microcms-field-extensions';
 import Layout from '@layouts/Layout.astro';
 ---
 
-<script>
-  import { render } from 'microcms-field-extensions';
-
-  render(document.getElementById('root'));
-</script>
-
 <Layout>
-  <div 
-    id="root" 
-    data-origin={`https://${process.env.MICROCMS_SERVICE_DOMAIN}.microcms.io`} 
-  />
+  <FieldExtensions client:only origin={`https://${process.env.MICROCMS_SERVICE_DOMAIN}.microcms.io`} />
 </Layout>
