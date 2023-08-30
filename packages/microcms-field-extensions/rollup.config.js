@@ -1,4 +1,5 @@
 import { defineConfig } from 'rollup';
+import postcss from 'rollup-plugin-postcss';
 import typescript from '@rollup/plugin-typescript';
 
 export default defineConfig({
@@ -7,5 +8,5 @@ export default defineConfig({
     dir: 'dist',
     format: 'esm',
   },
-  plugins: [typescript()],
+  plugins: [postcss(), typescript()],
 });
