@@ -2,7 +2,10 @@ import { family as ZenMaruGothic } from '@fontsource/zen-maru-gothic/metadata.js
 
 /** @type {import('tailwindcss').Config} */
 const config = {
-  content: ['src/**/*.{astro,ts}'],
+  content: [
+    'src/**/*.{astro,ts}',
+    'node_modules/microcms-field-extensions/**/*.js',
+  ],
   theme: {
     fontFamily: {
       body: [ZenMaruGothic, 'sans-serif'],

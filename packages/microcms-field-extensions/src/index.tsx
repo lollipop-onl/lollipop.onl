@@ -2,7 +2,6 @@ import { Frame } from '@components/Frame';
 import { Editor } from '@components/Editor';
 import { createRoot } from 'react-dom/client';
 import { createHashRouter, Outlet, RouterProvider } from 'react-router-dom';
-import 'tailwindcss/tailwind.css';
 
 export const render = (rootEl: HTMLElement | null) => {
   if (!rootEl) return;
