@@ -9,13 +9,11 @@ export const Editor: React.FC<Props> = () => {
 
   useEffect(() => console.log(message), [message]);
 
-  if (!message) return null;
-
   return (
     <MonacoEditor
       height={500}
       defaultLanguage="markdown"
-      defaultValue={message.data as string}
+      defaultValue={(message?.data as string) ?? ''}
       onChange={(value) => postData({ data: value })}
     />
   );
