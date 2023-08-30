@@ -1,0 +1,20 @@
+name: Deploy with Wrangler
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          workingDirectory: apps/worker
+          secrets: |
+            GYAZO_ACCESS_TOKEN
+            GYAZO_COLLECTION_ID
+        env:
+          GYAZO_ACCESS_TOKEN: ${{ secrets.GYAZO_ACCESS_TOKEN }}
+          GYAZO_COLLECTION_ID: ${{ secrets.GYAZO_COLLECTION_ID }}
