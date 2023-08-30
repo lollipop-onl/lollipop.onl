@@ -14,17 +14,19 @@ export const Editor: React.FC<Props> = () => {
   }, [message]);
 
   return (
-    <MonacoEditor
-      height={500}
-      defaultLanguage="markdown"
-      defaultValue={(message?.data as string) ?? ''}
-      options={{
-        minimap: { enabled: false },
-        lineNumbers: 'off',
-        wordWrap: 'on',
-      }}
-      onMount={(editor) => (editorRef.current = editor)}
-      onChange={(value) => postData({ data: value })}
-    />
+    <div className="rounded border">
+      <MonacoEditor
+        height={500}
+        defaultLanguage="markdown"
+        defaultValue={(message?.data as string) ?? ''}
+        options={{
+          minimap: { enabled: false },
+          lineNumbers: 'off',
+          wordWrap: 'on',
+        }}
+        onMount={(editor) => (editorRef.current = editor)}
+        onChange={(value) => postData({ data: value })}
+      />
+    </div>
   );
 };
