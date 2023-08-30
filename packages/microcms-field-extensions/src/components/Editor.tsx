@@ -15,29 +15,29 @@ export const Editor: React.FC<Props> = () => {
   }, [message]);
 
   return (
-    <div
-      className="overflow-hidden rounded border"
-      style={{ height: `${contentHeight}px` }}
-    >
-      <MonacoEditor
-        defaultLanguage="markdown"
-        defaultValue={(message?.data as string) ?? ''}
-        options={{
-          minimap: { enabled: false },
-          lineNumbers: 'off',
-          wordWrap: 'on',
-          scrollbar: { vertical: 'hidden', horizontal: 'hidden' },
-          scrollBeyondLastLine: false,
-        }}
-        onMount={(editor) => {
-          editorRef.current = editor;
+    <div className="overflow-hidden rounded border">
+      <div style={{ height: `${contentHeight}px` }}>
+        <MonacoEditor
+          defaultLanguage="markdown"
+          defaultValue={(message?.data as string) ?? ''}
+          options={{
+            minimap: { enabled: false },
+            lineNumbers: 'off',
+            wordWrap: 'on',
+            scrollbar: { vertical: 'hidden', horizontal: 'hidden' },
+            scrollBeyondLastLine: false,
+          }}
+          onMount={(editor) => {
+            editorRef.current = editor;
 
-          editor.onDidContentSizeChange((e) => {
-            setContentHeight(e.contentHeight);
-          });
-        }}
-        onChange={(value) => postData({ data: value })}
-      />
+            editor.onDidContentSizeChange((e) => {
+              setContentHeight(e.contentHeight);
+            });
+          }}
+          onChange={(value) => postData({ data: value })}
+        />
+      </div>
+      <p className="mt-1 text-right text-sm">{message?.data?.length || 0}</p>
     </div>
   );
 };

@@ -12,6 +12,8 @@ export const render = (rootEl: HTMLElement | null) => {
     throw new TypeError('data-origin is required');
   }
 
+  document.body.classList.add('overflow-hidden');
+
   const router = createHashRouter([
     {
       path: '/',
