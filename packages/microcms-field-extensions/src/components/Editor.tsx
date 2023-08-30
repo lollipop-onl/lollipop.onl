@@ -1,12 +1,13 @@
 import { useFieldExtension } from '@hooks/useFieldExtension';
 import type { editor } from 'monaco-editor';
 import { Editor as MonacoEditor } from '@monaco-editor/react';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 type Props = {};
 
 export const Editor: React.FC<Props> = () => {
   const editorRef = useRef<editor.IStandaloneCodeEditor>();
+  const [contentHeight, setContentHeight] = useState(0);
   const { message, postData } = useFieldExtension<string | undefined>();
 
   useEffect(() => {
@@ -14,7 +15,7 @@ export const Editor: React.FC<Props> = () => {
   }, [message]);
 
   return (
-    <div className="rounded border">
+    <div style={{ height: `${contentHeight}px` }}>
       <MonacoEditor
         defaultLanguage="markdown"
         defaultValue={(message?.data as string) ?? ''}
@@ -24,7 +25,13 @@ export const Editor: React.FC<Props> = () => {
           wordWrap: 'on',
           scrollBeyondLastLine: false,
         }}
-        onMount={(editor) => (editorRef.current = editor)}
+        onMount={(editor) => {
+          editorRef.current = editor;
+
+          editor.onDidContentSizeChange((e) => {
+            setContentHeight(e.contentHeight);
+          });
+        }}
         onChange={(value) => postData({ data: value })}
       />
     </div>
