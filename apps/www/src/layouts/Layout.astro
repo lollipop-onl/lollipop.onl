@@ -32,7 +32,7 @@ const SITE_NAME = 'よなよなこーど';
       gtag('config', 'G-K8S4SGNN6L');
     </script>
   </head>
-  <body class="font-sans text-sumi-900 dark:text-white bg-white dark:bg-sumi-900">
+  <body class="font-sans text-white bg-sumi-900 text-md">
     <Header />
     <div class="px-4">
       <div class="max-w-5xl mx-auto">
@@ -46,16 +46,5 @@ const SITE_NAME = 'よなよなこーど';
         </div>
       </div>
     </div>
-    <script>
-      import { applyTheme, toggleTheme } from '@utils/darkMode';
-
-      window.toggleTheme = toggleTheme;
-      applyTheme();
-
-      requestAnimationFrame(() => {
-        document.body.classList.add('transition');
-        document.body.classList.add('duration-75');
-      });
-    </script>
   </body>
 </html>
