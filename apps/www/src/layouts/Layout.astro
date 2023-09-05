@@ -1,5 +1,8 @@
 ---
-import '@fontsource/zen-maru-gothic';
+import Header from '@components/Header.astro';
+import '@fontsource/ibm-plex-sans-jp/400.css';
+import '@fontsource/ibm-plex-sans-jp/500.css';
+import '@fontsource/ibm-plex-sans-jp/700.css';
 
 type Props = {
   title?: string;
@@ -28,7 +31,23 @@ const SITE_NAME = 'よなよなこーど';
       gtag('config', 'G-K8S4SGNN6L');
     </script>
   </head>
-  <body class="font-body">
+  <body class="font-sans text-sumi-900 dark:text-white bg-white dark:bg-sumi-900">
+    <Header />
+      <div class="prose dark:prose-invert">
+        <h1>hello</h1>
+        <p>w<b>ooo</b>orld</p>
+        <p>
+          <a href="/">hello world</a>
+          <a href="/foo/bar">hello world</a>
+        </p>
+    </div>
+    <button onclick="toggleTheme()">toggle theme</button>
     <slot />
+    <script>
+      import { applyTheme, toggleTheme } from '@utils/darkMode';
+
+      window.toggleTheme = toggleTheme;
+      applyTheme();
+    </script>
   </body>
 </html>

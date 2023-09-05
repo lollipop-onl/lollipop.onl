@@ -1,0 +1,32 @@
+<script>
+  import { toggleTheme } from '@utils/darkMode';
+  
+  class ToggleTheme extends HTMLElement {
+    constructor() {
+      super();
+
+      const button = this.querySelector('button');
+
+      button?.addEventListener('click', () => {
+        toggleTheme();
+      });
+    }
+  }
+
+  customElements.define('toggle-theme', ToggleTheme);
+</script>
+
+<header class="px-4">
+  <div class="mx-auto max-w-6xl py-4">
+    <div class="flex items-center justify-between">
+      <a href="/" class="text-xl">よなよなコード</a>
+      <toggle-theme>
+        <button class="grid place-items-center grid-flow-col gap-2 py-1 px-3 hover:underline">
+          <span class="w-6 h-6 icon-[carbon--brightness-contrast]" />
+          <span class="block dark:hidden">Light</span>
+          <span class="hidden dark:block">Dark</span>
+        </button>
+      </toggle-theme>
+    </div>
+  </div>
+</header>
