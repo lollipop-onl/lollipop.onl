@@ -1,8 +1,8 @@
 ---
 import { FieldExtensions } from 'microcms-field-extensions';
-import Layout from '@layouts/Layout.astro';
+import EditorLayout from '@layouts/EditorLayout.astro';
 ---
 
-<Layout>
+<EditorLayout>
   <FieldExtensions client:only origin={`https://${process.env.MICROCMS_SERVICE_DOMAIN}.microcms.io`} />
-</Layout>
+</EditorLayout>
