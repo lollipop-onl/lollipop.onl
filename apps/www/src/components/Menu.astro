@@ -1,0 +1,43 @@
+---
+import { twMerge } from 'tailwind-merge';
+
+const MENU_LINKS = [
+  {
+    title: 'プロフィール',
+    href: '/',
+    icon: 'icon-[carbon--haze-night]',
+    activate: () => Astro.url.pathname === '/',
+  },
+  {
+    title: 'ブログ',
+    href: '/blog/',
+    icon: 'icon-[carbon--blog]',
+    activate: () => Astro.url.pathname.startsWith('/blog/'),
+  },
+] satisfies Array<{
+  title: string;
+  href: string;
+  icon: string;
+  activate(): boolean;
+}>;
+---
+
+<nav class="bg-sumi-50 dark:bg-sumi-800 w-64 rounded-sm p-3">
+  <div class="grid gap-4">
+    {
+      MENU_LINKS.map(({ title, href, icon, activate }) => (
+        <a
+          class={twMerge(
+            'flex items-center justify-start gap-3 rounded px-4 py-3 hover:underline',
+            !activate() && 'hover:bg-sumi-100 dark:hover:bg-sumi-700',
+            activate() && 'bg-sea-50 text-sea-800 dark:text-sea-50 dark:bg-sea-800 font-bold',
+          )}
+          href={href}
+        >
+          <span class={`h-5 w-5 ${icon}`} />
+          {title}
+        </a>
+      ))
+    }
+  </div>
+</nav>

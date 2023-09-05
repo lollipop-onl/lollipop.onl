@@ -21,6 +21,17 @@ const config = {
       medium: '500',
       bold: '700',
     },
+    fontSize: {
+      '4xl': '2.25rem /* 36px */',
+      '3xl': '2rem /* 32px */',
+      '2xl': '1.75rem /* 28px */',
+      xl: '1.5rem /* 24px */',
+      lg: '1.25rem /* 20px */',
+      md: '1rem /* 16px */',
+      sm: '0.875rem /* 14px */',
+      xs: '0.75rem /* 12px */',
+      '2xs': '0.625rem /* 10px */',
+    },
     colors: {
       white: '#ffffff',
       sea: {
@@ -109,6 +120,7 @@ const config = {
       md: '0.04em',
     },
     borderRadius: {
+      DEFAULT: '4px',
       none: '0',
       sm: '8px',
       md: '12px',
@@ -118,7 +130,6 @@ const config = {
     typography: (theme) => ({
       DEFAULT: {
         css: {
-          color: theme('colors.sumi.900'),
           letterSpacing: theme('letterSpacing.md'),
           // paragraphs
           p: {
@@ -130,11 +141,11 @@ const config = {
           h1: {
             marginTop: theme('spacing.16'),
             marginBottom: theme('spacing.6'),
-            fontSize: '2rem',
+            fontSize: theme('fontSize.3xl'),
             fontWeight: theme('fontWeight.medium'),
             lineHeight: theme('lineHeight.md'),
             [`@media (min-width: ${theme('screens.md')})`]: {
-              fontSize: '2.25rem',
+              fontSize: theme('fontSize.4xl'),
               fontWeight: theme('fontWeight.regular'),
               lineHeight: theme('lineHeight.sm'),
             },
@@ -142,44 +153,44 @@ const config = {
           h2: {
             marginTop: theme('spacing.16'),
             marginBottom: theme('spacing.6'),
-            fontSize: '1.75rem',
+            fontSize: theme('fontSize.2xl'),
             fontWeight: theme('fontWeight.medium'),
             lineHeight: theme('lineHeight.md'),
             [`@media (min-width: ${theme('screens.md')})`]: {
-              fontSize: '2.25rem',
+              fontSize: theme('fontSize.3xl'),
               fontWeight: theme('fontWeight.regular'),
             },
           },
           h3: {
             marginTop: theme('spacing.10'),
             marginBottom: theme('spacing.6'),
-            fontSize: '2rem',
+            fontSize: theme('fontSize.xl'),
             fontWeight: theme('fontWeight.medium'),
             lineHeight: theme('lineHeight.md'),
             [`@media (min-width: ${theme('screens.md')})`]: {
-              fontSize: '1.75rem',
+              fontSize: theme('fontSize.2xl'),
               fontWeight: theme('fontWeight.regular'),
             },
           },
           h4: {
             marginTop: theme('spacing.10'),
             marginBottom: theme('spacing.4'),
-            fontSize: '1.25rem',
+            fontSize: theme('fontSize.lg'),
             fontWeight: theme('fontWeight.medium'),
             lineHeight: theme('lineHeight.md'),
             [`@media (min-width: ${theme('screens.md')})`]: {
-              fontSize: '2rem',
+              fontSize: theme('fontSize.xl'),
               fontWeight: theme('fontWeight.regular'),
             },
           },
           h5: {
             marginTop: theme('spacing.6'),
             marginBottom: theme('spacing.4'),
-            fontSize: '1rem',
+            fontSize: theme('fontSize.md'),
             fontWeight: theme('fontWeight.medium'),
             lineHeight: theme('lineHeight.lg'),
             [`@media (min-width: ${theme('screens.md')})`]: {
-              fontSize: '1.25rem',
+              fontSize: theme('fontSize.lg'),
               fontWeight: theme('fontWeight.regular'),
               lineHeight: theme('lineHeight.md'),
             },
@@ -196,17 +207,6 @@ const config = {
             },
             '&:hover': {
               textDecoration: 'none',
-            },
-          },
-        },
-      },
-      invert: {
-        css: {
-          color: theme('colors.white'),
-          a: {
-            color: theme('colors.sea.300'),
-            '&:hover, &:active, &:visited': {
-              color: theme('colors.sea.200'),
             },
           },
         },

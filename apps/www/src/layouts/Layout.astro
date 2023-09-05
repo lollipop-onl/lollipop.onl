@@ -1,5 +1,6 @@
 ---
 import Header from '@components/Header.astro';
+import Menu from '@components/Menu.astro'
 import '@fontsource/ibm-plex-sans-jp/400.css';
 import '@fontsource/ibm-plex-sans-jp/500.css';
 import '@fontsource/ibm-plex-sans-jp/700.css';
@@ -33,21 +34,28 @@ const SITE_NAME = 'よなよなこーど';
   </head>
   <body class="font-sans text-sumi-900 dark:text-white bg-white dark:bg-sumi-900">
     <Header />
-      <div class="prose dark:prose-invert">
-        <h1>hello</h1>
-        <p>w<b>ooo</b>orld</p>
-        <p>
-          <a href="/">hello world</a>
-          <a href="/foo/bar">hello world</a>
-        </p>
+    <div class="px-4">
+      <div class="max-w-5xl mx-auto">
+        <div class="flex gap-8">
+          <div class="flex-shrink-0">
+            <Menu />
+          </div>
+          <main id="main" class="w-full">
+            <slot />
+          </main>
+        </div>
+      </div>
     </div>
-    <button onclick="toggleTheme()">toggle theme</button>
-    <slot />
     <script>
       import { applyTheme, toggleTheme } from '@utils/darkMode';
 
       window.toggleTheme = toggleTheme;
       applyTheme();
+
+      requestAnimationFrame(() => {
+        document.body.classList.add('transition');
+        document.body.classList.add('duration-75');
+      });
     </script>
   </body>
 </html>
