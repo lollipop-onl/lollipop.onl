@@ -1,0 +1,23 @@
+---
+import dayjs from 'dayjs';
+
+type Props = {
+  href: string;
+  title: string;
+  category?: string;
+  datetime?: string;
+};
+const { href, title, category, datetime } = Astro.props;
+---
+
+<a class="block rounded-md p-5 border border-divider bg-tertiary hover:bg-secondary" href={href}>
+  <div class="grid gap-2">
+    {category && <span class="text-description font-medium text-sm">{category}</span>}
+    <h2 class="text-lg">{title}</h2>
+    {datetime && (
+      <time class="text-description text-xs" datetime={dayjs(datetime).format('YYYY-MM-DD')}>
+      {dayjs(datetime).format('YYYY年M月D日')}
+      </time>
+    )}
+  </div>
+</a>

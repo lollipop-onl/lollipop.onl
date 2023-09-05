@@ -1,18 +1,21 @@
 ---
 import { getBlogEntities } from 'microcms-client';
+import ArticleCard from '@components/ArticleCard.astro';
 import Layout from '@layouts/Layout.astro';
 
 const { contents, totalCount } = await getBlogEntities();
 ---
 
 <Layout>
-  <pre>{import.meta.env.MICROCMS_API_KEY}</pre>
-  <p>Hello World.</p>
-  <p>total: {totalCount}</p>
-  <ul>
-    {contents.map(({ id, title }) => (
+  <ul class="grid gap-8">
+    {contents.map(({ id, title, updatedAt }) => (
       <li>
-        <a href={`/blog/${id}`}>{title}</a>
+        <ArticleCard 
+          href={`/blog/${id}/`}
+          title={title}
+          category='テクニカルノート'
+          datetime={updatedAt}
+        />
       </li>
     ))}
   </ul>
