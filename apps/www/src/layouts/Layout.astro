@@ -1,5 +1,6 @@
 ---
 import Header from '@components/Header.astro';
+import Footer from '@components/Footer.astro';
 import Menu from '@components/Menu.astro'
 import '@fontsource/ibm-plex-sans-jp/400.css';
 import '@fontsource/ibm-plex-sans-jp/500.css';
@@ -14,7 +15,7 @@ const SITE_NAME = 'よなよなこーど';
 ---
 
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" class="h-full">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=devise-width, initial-scale=1.0" />
@@ -32,18 +33,23 @@ const SITE_NAME = 'よなよなこーど';
       gtag('config', 'G-K8S4SGNN6L');
     </script>
   </head>
-  <body class="font-sans text-white bg-sumi-900 text-md">
-    <Header />
-    <div class="px-4">
-      <div class="max-w-5xl mx-auto">
-        <div class="flex gap-8">
-          <div class="flex-shrink-0">
-            <Menu />
+  <body class="font-sans bg-primary text-md text-body h-full">
+    <div class="h-full flex flex-col gap-6">
+      <Header />
+      <div class="px-4">
+        <div class="max-w-5xl mx-auto">
+          <div class="flex gap-8">
+            <div class="flex-shrink-0">
+              <Menu />
+            </div>
+            <main id="main" class="w-full">
+              <slot />
+            </main>
           </div>
-          <main id="main" class="w-full">
-            <slot />
-          </main>
         </div>
+      </div>
+      <div class="mt-auto">
+        <Footer />
       </div>
     </div>
   </body>

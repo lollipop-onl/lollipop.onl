@@ -1,9 +1,11 @@
 import plugin from 'tailwindcss/plugin';
-import colors from './colors';
+import { colors, semanticColors } from './colors';
 import typography from './typography';
 
 /** @type {import('tailwindcss/types/config').PluginCreator} */
-const main = () => {};
+const main = ({ addUtilities }) => {
+  addUtilities(semanticColors);
+};
 
 export default plugin(main, {
   theme: {

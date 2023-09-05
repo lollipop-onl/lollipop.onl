@@ -1,4 +1,6 @@
-export default {
+import Color from 'color';
+
+export const colors = {
   white: '#ffffff',
   sea: {
     1200: '#00004f',
@@ -75,4 +77,43 @@ export default {
     100: '#ffc8b8',
     50: '#ffe7e6',
   },
+};
+
+export const semanticColors = {
+  // Text Light
+  '.text-body': { color: colors.sumi[900] },
+  '.text-description': { color: colors.sumi[700] },
+  '.text-placeholder': { color: colors.sumi[600] },
+  '.text-on-fill': { color: colors.white },
+  '.text-link': { color: colors.sea[800] },
+  '.text-hover': { color: colors.sea[900] },
+  '.text-active': { color: colors.sea[900] },
+  '.text-visited': { color: colors.sea[900] },
+  '.text-alert': { color: colors.sun[800] },
+  '.text-disabled': { color: colors.sumi[500] },
+  // Icon Light
+  '.icon-label': { color: colors.sumi[900] },
+  '.icon-active': { color: colors.sea[800] },
+  '.icon-alert': { color: colors.sun[800] },
+  '.icon-disabled': { color: colors.sumi[500] },
+  // Button Light
+  '.button-normal': { backgroundColor: colors.sea[800] },
+  '.button-hover': {
+    backgroundColor: Color(colors.sea[800]).darken(0.13).toString(),
+  },
+  '.button-active': {
+    backgroundColor: Color(colors.sea[800]).darken(0.13).toString(),
+  },
+  '.button-disabled': { backgroundColor: colors.sumi[500] },
+  // Background Light
+  '.bg-primary': { backgroundColor: colors.white },
+  '.bg-secondary': { backgroundColor: colors.sumi[100] },
+  '.bg-tertiary': { backgroundColor: colors.sumi[50] },
+  // Border Light
+  '.border-field': { borderColor: colors.sumi[900] },
+  '.border-divider': { borderColor: colors.sumi[300] },
+  '.border-focused': { borderColor: colors.wood[600] },
+  '.border-selected': { borderColor: colors.sea[800] },
+  '.border-alert': { borderColor: colors.sun[800] },
+  '.border-disabled': { borderColor: colors.sumi[300] },
 };

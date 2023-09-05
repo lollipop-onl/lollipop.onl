@@ -25,10 +25,11 @@ const html = marked.parse(content.body ?? '');
 
 <Layout>
   <div class="rounded-lg bg-sumi-50 overflow-hidden">
-    <div class="bg-sea-800 text-white px-5 pt-8 pb-8">
-      <h1 class="text-2xl font-medium md:font-regular md:text-3xl leading-sm">{content.title}</h1>
-      <p class="text-sumi-900 text-opacity-50 text-sm">{content.lead}</p>
+    <div class="bg-sea-50 md:px-8 px-5 pt-8 pb-8 grid gap-3">
+      <h1 class="text-2xl font-medium md:font-regular md:text-xl leading-sm">{content.title}</h1>
     </div>
-    <div class="prose" set:html={html} />
+    <div class="px-5 md:px-8 py-12">
+      <div class="prose" set:html={html} />
+    </div>
   </div>
 </Layout>

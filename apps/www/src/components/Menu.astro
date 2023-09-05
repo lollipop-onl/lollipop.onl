@@ -22,7 +22,7 @@ const MENU_LINKS = [
 }>;
 ---
 
-<nav class="bg-sumi-50 w-64 rounded-sm p-3">
+<nav class="bg-tertiary w-64 rounded-sm p-3">
   <div class="grid gap-4">
     {
       MENU_LINKS.map(({ title, href, icon, activate }) => (
@@ -30,7 +30,7 @@ const MENU_LINKS = [
           class={twMerge(
             'flex items-center justify-start gap-3 rounded px-4 py-3 hover:underline',
             !activate() && 'hover:bg-sumi-100',
-            activate() && 'bg-sea-50 text-sea-800 font-bold',
+            activate() && 'bg-sea-50 text-active font-bold',
           )}
           href={href}
         >
