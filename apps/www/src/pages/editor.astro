@@ -4,5 +4,5 @@ import EditorLayout from '@layouts/EditorLayout.astro';
 ---
 
 <EditorLayout>
-  <FieldExtensions client:only origin={`https://${process.env.MICROCMS_SERVICE_DOMAIN}.microcms.io`} />
+  <FieldExtensions client:only="react" origin={`https://${process.env.MICROCMS_SERVICE_DOMAIN}.microcms.io`} />
 </EditorLayout>
