@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" fill="none">
+  <style>
+    g {
+      fill: #1A1A1C;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      g {
+        fill: #FFF;
+      }
+    }
+  </style>
+  <g clip-path="url(#a)">
+    <g clip-path="url(#b)">
+      <path d="M448 208v-80a32.038 32.038 0 0 0-32-32h-48v32h48v80a63.615 63.615 0 0 0 22.117 48A63.612 63.612 0 0 0 416 304v80h-48v32h48a32.038 32.038 0 0 0 32-32v-80a32.038 32.038 0 0 1 32-32v-32a32.038 32.038 0 0 1-32-32Z"/>
+      <path fill-rule="evenodd" d="m272 144-13.712 48h32L304 144h32l-13.712 48H352v32h-38.848l-18.288 64H336v32h-50.288L272 368h-32l13.712-48h-32L208 368h-32l13.712-48H160v-32h38.864l18.288-64H176v-32h50.288L240 144h32Zm9.152 80h-32l-18.288 64h32l18.288-64Z" clip-rule="evenodd"/>
+      <path d="M96 208v-80h48V96H96a32.038 32.038 0 0 0-32 32v80a32.037 32.037 0 0 1-32 32v32a32.038 32.038 0 0 1 32 32v80a32.037 32.037 0 0 0 32 32h48v-32H96v-80a63.61 63.61 0 0 0-22.117-48A63.614 63.614 0 0 0 96 208Z"/>
+    </g>
+  </g>
+  <defs>
+    <clipPath id="a">
+      <path fill="#fff" d="M0 0h512v512H0z"/>
+    </clipPath>
+    <clipPath id="b">
+      <path fill="#fff" d="M0 0h512v512H0z"/>
+    </clipPath>
+  </defs>
+</svg>
