@@ -4,19 +4,34 @@ on:
     branches:
       - main
     paths:
-      - apps/worker/**
+      - apps/worker-editor/**
+      - apps/worker-ogp/**
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: cloudflare/wrangler-action@v3
+      - uses: dorny/paths-filter@v2
+        id: changes
+        with:
+          filters: |
+            editor:
+              - 'apps/worker-editor/**'
+            ogp:
+              - 'apps/worker-ogp/**'
+      - if: steps.changes.outputs.editor == 'true'
+        uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
-          workingDirectory: apps/worker
+          workingDirectory: apps/worker-editor
           secrets: |
             GYAZO_ACCESS_TOKEN
             GYAZO_COLLECTION_ID
         env:
           GYAZO_ACCESS_TOKEN: ${{ secrets.GYAZO_ACCESS_TOKEN }}
           GYAZO_COLLECTION_ID: ${{ secrets.GYAZO_COLLECTION_ID }}
+      - if: steps.changes.outputs.ogp == 'true'
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          workingDirectory: apps/worker-ogp

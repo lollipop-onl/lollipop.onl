@@ -2,14 +2,14 @@ import { MarkedExtension, Renderer } from 'marked';
 
 const renderer = new Renderer();
 
-export const ogLink: MarkedExtension = {
+export const linkCard: MarkedExtension = {
   renderer: {
     paragraph(text) {
-      if (!/^https?:\/\//.test(text)) {
+      if (!/^https?:\/\/[\w!\?/\+\-_~=;\.,\*&@#\$%\(\)'\[\]]+$/.test(text)) {
         return renderer.paragraph(text);
       }
 
-      return `<og-link>${text}</og-link>`;
+      return `<link-card url="${text}"></link-card>`;
     },
     link(href, title, text) {
       if (href === text) {

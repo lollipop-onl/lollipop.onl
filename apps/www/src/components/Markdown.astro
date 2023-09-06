@@ -1,18 +1,31 @@
 ---
 import { Marked } from 'marked';
-import { ogLink, codeBlock } from 'marked-extensions';
+import { linkCard, codeBlock } from 'marked-extensions';
 
 type Props = {
   content: string | undefined;
 };
 const { content } = Astro.props;
 
-const marked = new Marked({ breaks: true });
+const marked = new Marked({
+  breaks: true,
+  walkTokens(token) {
+    // ol の初期値を常に 0 からにする
+    if (token.type === 'list') {
+      token.start = undefined;
+    }
+  },
+});
 
-marked.use(ogLink);
-marked.use(codeBlock);
+marked.use(linkCard, codeBlock);
 
 const html = marked.parse(content ?? '');
 ---
+
+<script>
+  import { LinkCard } from '@components/LinkCard';
+
+  customElements.define('link-card', LinkCard);
+</script>
 
 <div set:html={html} />

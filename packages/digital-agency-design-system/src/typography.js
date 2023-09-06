@@ -92,7 +92,7 @@ const typography = (theme) => ({
         display: 'grid',
         gap: theme('spacing.1'),
         marginBottom: theme('spacing.2'),
-        paddingLeft: '1.5em',
+        paddingLeft: '2em',
       },
       'li > ul, li > ol': {
         marginBottom: '0',
@@ -105,6 +105,11 @@ const typography = (theme) => ({
       },
       'li > ol': {
         listStyleType: 'lower-alpha',
+      },
+      // custom elements
+      'link-card': {
+        display: 'block',
+        marginBottom: theme('spacing.2'),
       },
     },
   },

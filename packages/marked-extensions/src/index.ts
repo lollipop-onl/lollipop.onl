@@ -1,2 +1,2 @@
-export * from './og-link';
+export * from './link-card';
 export * from './code-block';
