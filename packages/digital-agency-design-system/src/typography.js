@@ -80,13 +80,6 @@ const typography = (theme) => ({
           textDecoration: 'none',
         },
       },
-      // code block
-      pre: {
-        backgroundColor: theme('colors.sumi.100'),
-        borderRadius: theme('borderRadius.lg'),
-        padding: theme('spacing.5'),
-        marginBottom: theme('spacing.6'),
-      },
       // list
       'ul, ol': {
         display: 'grid',
@@ -106,10 +99,46 @@ const typography = (theme) => ({
       'li > ol': {
         listStyleType: 'lower-alpha',
       },
+      // code block
+      '.code-block': {
+        display: 'grid',
+        placeItems: 'start',
+        overflow: 'hidden',
+        backgroundColor: '#2e3440',
+        borderRadius: theme('borderRadius.md'),
+        marginBottom: theme('spacing.6'),
+        color: theme('colors.sumi.100'),
+        wordBreak: 'break-all',
+      },
+      '.code-block > pre': {
+        paddingInline: theme('spacing.3'),
+        paddingBlock: theme('spacing.5'),
+        fontFamily: theme('fontFamily.mono'),
+      },
+      '.code-block > .label': {
+        display: 'inline-flex',
+        backgroundColor: '#3b4252',
+        paddingLeft: theme('spacing.4'),
+        paddingRight: theme('spacing.2'),
+        paddingTop: theme('spacing.4'),
+        paddingBottom: theme('spacing.2'),
+        marginBottom: '-8px',
+        marginRight: theme('spacing.5'),
+        borderBottomRightRadius: theme('borderRadius.sm'),
+        fontSize: theme('fontSize.sm'),
+      },
       // custom elements
       'link-card': {
         display: 'block',
         marginBottom: theme('spacing.2'),
+      },
+      'code-block': {
+        display: 'block',
+        backgroundColor: theme('colors.sumi.100'),
+        borderRadius: theme('borderRadius.lg'),
+        padding: theme('spacing.5'),
+        marginBottom: theme('spacing.6'),
+        fontFamily: theme('fontFamily.mono'),
       },
     },
   },

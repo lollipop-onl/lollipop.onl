@@ -8,16 +8,16 @@ export class LinkCard extends LitElement {
   @state()
   data: any | undefined;
 
-  connectedCallback() {
-    super.connectedCallback();
-
-    this.fetchInfo();
-  }
-
   get domain() {
     const url = new URL(this.url);
 
     return url.hostname;
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+
+    this.fetchInfo();
   }
 
   async fetchInfo() {
@@ -55,16 +55,7 @@ export class LinkCard extends LitElement {
         >
           <span class="flex h-32 items-center justify-between gap-2">
             <span class="p-4">
-              <span class="text-md text-body line-clamp-2 font-medium">
-                ${this.data.title}
-              </span>
-              ${this.data.description &&
-              html`
-                <span class="text-description mt-1 line-clamp-1 text-sm">
-                  ${this.data.description}
-                </span>
-              `}
-              <span class="text-body mt-3 flex items-center gap-2 text-xs">
+              <span class="text-body flex items-center gap-2 text-xs">
                 <img
                   class="aspect-square h-4 w-4"
                   src="https://www.google.com/s2/favicons?domain=${this.domain}"
@@ -74,6 +65,15 @@ export class LinkCard extends LitElement {
                   ${this.data.siteName || this.domain}
                 </span>
               </span>
+              <span class="text-md text-body mt-2 line-clamp-2 font-medium">
+                ${this.data.title}
+              </span>
+              ${this.data.description &&
+              html`
+                <span class="text-description mt-1 line-clamp-1 text-sm">
+                  ${this.data.description}
+                </span>
+              `}
             </span>
             ${this.data.imageUrl &&
             html`

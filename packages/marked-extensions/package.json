@@ -9,12 +9,14 @@
     "build": "tsc",
     "dev": "pnpm build --watch"
   },
+  "dependencies": {
+    "highlight.js": "^11.8.0",
+    "marked": "^8.0.0"
+  },
   "devDependencies": {
+    "@types/escape-html": "^1.0.2",
     "@types/node": "^20.5.7",
     "tsconfigs": "workspace:^",
     "typescript": "^5.2.2"
-  },
-  "dependencies": {
-    "marked": "^8.0.0"
   }
 }
