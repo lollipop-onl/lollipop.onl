@@ -5,15 +5,15 @@ const renderer = new Renderer();
 export const linkCard: MarkedExtension = {
   renderer: {
     paragraph(text) {
-      if (!/^https?:\/\/[\w!\?/\+\-_~=;\.,\*&@#\$%\(\)'\[\]]+$/.test(text)) {
-        return renderer.paragraph(text);
+      if (/^<link-card url=".+?"><\/link-card>$/.test(text)) {
+        return text;
       }
 
-      return `<link-card url="${text}"></link-card>`;
+      return renderer.paragraph(text);
     },
     link(href, title, text) {
       if (href === text) {
-        return href;
+        return `<link-card url="${href}"></link-card>`;
       }
 
       return renderer.link(href, title, text);

@@ -14,6 +14,10 @@ export class LinkCard extends LitElement {
     return url.hostname;
   }
 
+  get isInline() {
+    return this.parentElement?.tagName === 'P';
+  }
+
   connectedCallback() {
     super.connectedCallback();
 
@@ -43,7 +47,16 @@ export class LinkCard extends LitElement {
 
   render() {
     if (!this.data) {
-      return html` <a href="${this.url}" target="_blank">${this.url}</a> `;
+      return html`<a href="${this.url}" target="_blank">${this.url}</a>`;
+    }
+
+    if (this.isInline) {
+      return html`
+        <a class="px-1" href="${this.url}" target="_blank">
+          ${this.data.title}
+          <span class="icon-[carbon--launch] h-4 w-4 translate-y-0.5" />
+        </a>
+      `;
     }
 
     return html`

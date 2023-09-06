@@ -80,6 +80,13 @@ const typography = (theme) => ({
           textDecoration: 'none',
         },
       },
+      blockquote: {
+        borderLeftWidth: theme('borderWidth.4'),
+        borderColor: theme('colors.wood.600'),
+        paddingInline: theme('spacing.5'),
+        paddingBlock: theme('spacing.2'),
+        marginBottom: theme('spacing.6'),
+      },
       // list
       'ul, ol': {
         display: 'grid',
@@ -131,6 +138,10 @@ const typography = (theme) => ({
       'link-card': {
         display: 'block',
         marginBottom: theme('spacing.2'),
+      },
+      'p > link-card': {
+        display: 'inline',
+        marginBottom: theme('spacing.0'),
       },
       'code-block': {
         display: 'block',
