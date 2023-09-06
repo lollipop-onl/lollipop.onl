@@ -21,11 +21,15 @@ export class LinkCard extends LitElement {
   }
 
   async fetchInfo() {
-    const url = new URL('http://localhost:8082/info');
+    const workerEndpoint = new URL(import.meta.env.PUBLIC_WORKER_OGP_ENDPOINT);
+    const url = new URL(this.url);
 
-    url.searchParams.append('url', this.url);
+    // レスポンスに寄与しないはずのハッシュを削除
+    url.hash = '';
 
-    const res = await fetch(url);
+    workerEndpoint.searchParams.append('url', url.toString());
+
+    const res = await fetch(workerEndpoint);
 
     if (!res.ok) return;
 
@@ -71,11 +75,14 @@ export class LinkCard extends LitElement {
                 </span>
               </span>
             </span>
-            <img
-              class="aspect-square h-full object-cover md:aspect-auto"
-              src="${this.data.imageUrl}"
-              alt="リンク先ページのサムネイル"
-            />
+            ${this.data.imageUrl &&
+            html`
+              <img
+                class="aspect-square h-full object-cover md:aspect-auto"
+                src="${this.data.imageUrl}"
+                alt="リンク先ページのサムネイル"
+              />
+            `}
           </span>
         </a>
       </div>
