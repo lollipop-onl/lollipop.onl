@@ -1,4 +1,5 @@
-import { family as NotoSansJP } from '@fontsource/ibm-plex-sans-jp/metadata.json' assert { type: 'json' };
+import { family as IBMPlexSansJP } from '@fontsource/ibm-plex-sans-jp/metadata.json' assert { type: 'json' };
+import { family as NotoEmoji } from '@fontsource/noto-emoji/metadata.json' assert { type: 'json' };
 import typography from '@tailwindcss/typography';
 import { addDynamicIconSelectors } from '@iconify/tailwind';
 import digitalAgencyDesignSystem from 'digital-agency-design-system';
@@ -11,7 +12,7 @@ const config = {
   ],
   theme: {
     fontFamily: {
-      sans: [NotoSansJP, 'sans-serif'],
+      sans: [IBMPlexSansJP, NotoEmoji, 'sans-serif'],
     },
     extend: {},
   },

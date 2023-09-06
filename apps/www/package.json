@@ -13,6 +13,7 @@
     "@astrojs/react": "^3.0.0",
     "@astrojs/tailwind": "^5.0.0",
     "@fontsource/ibm-plex-sans-jp": "^5.0.7",
+    "@fontsource/noto-emoji": "^5.0.7",
     "astro": "^3.0.1",
     "dayjs": "^1.11.9",
     "digital-agency-design-system": "workspace:^",
