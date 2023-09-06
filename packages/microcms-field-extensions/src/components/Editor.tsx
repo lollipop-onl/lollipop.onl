@@ -1,4 +1,4 @@
-import { useFieldExtension } from '@hooks/useFieldExtension';
+import { useFieldExtension } from '../hooks/useFieldExtension';
 import type { editor } from 'monaco-editor';
 import { Editor as MonacoEditor } from '@monaco-editor/react';
 import { useEffect, useRef, useState } from 'react';

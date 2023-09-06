@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { setupFieldExtension } from 'microcms-field-extension-api';
 import { useMeasure } from 'react-use';
-import { FieldExtensionContext } from '@hooks/useFieldExtension';
+import { FieldExtensionContext } from '../hooks/useFieldExtension';
 
 type Props = {
   origin: string;

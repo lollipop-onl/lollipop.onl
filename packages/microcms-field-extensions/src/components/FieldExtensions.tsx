@@ -1,6 +1,6 @@
-import { Frame } from '@components/Frame';
-import { Editor } from '@components/Editor';
-import { Thumbnail } from '@components/Thumbnail';
+import { Frame } from './Frame';
+import { Editor } from './Editor';
+import { Thumbnail } from './Thumbnail';
 import { createHashRouter, Outlet, RouterProvider } from 'react-router-dom';
 
 type Props = {

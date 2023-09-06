@@ -1,1 +1,1 @@
-export * from '@components/FieldExtensions';
+export * from './components/FieldExtensions';
