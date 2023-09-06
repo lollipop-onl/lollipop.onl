@@ -57,9 +57,6 @@ importers:
       '@fontsource/ibm-plex-sans-jp':
         specifier: ^5.0.7
         version: 5.0.7
-      '@fontsource/noto-emoji':
-        specifier: ^5.0.7
-        version: 5.0.7
       astro:
         specifier: ^3.0.1
         version: 3.0.1
@@ -1218,10 +1215,6 @@ packages:
 
   /@fontsource/ibm-plex-sans-jp@5.0.7:
     resolution: {integrity: sha512-sTs+usOaRgfjIXhEPCLsJL+i8BO77WkM7qG4YfKVvVJ9FxtObAH5KjWuapxx8ENr2mZMPKFzW+6q/K/a/20i9A==}
-    dev: false
-
-  /@fontsource/noto-emoji@5.0.7:
-    resolution: {integrity: sha512-je0qmFnY9iJVBsv/n+YfXilU2iqTRhjdWp12rEOPyiO+YTbimVTA4BLzBYdE7cka4QfLeKCQzndFNewOP7hSrA==}
     dev: false
 
   /@iconify-json/carbon@1.1.21:

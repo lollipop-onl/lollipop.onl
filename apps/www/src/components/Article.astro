@@ -1,0 +1,48 @@
+---
+import dayjs from 'dayjs';
+import { marked } from 'marked';
+import type { BlogEntity, MicroCMSListContent } from 'microcms-client';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+
+type Props = {
+  content: BlogEntity & MicroCMSListContent;
+};
+const { content } = Astro.props;
+
+const html = marked.parse(content.body ?? '', {
+  breaks: true,
+});
+
+const publishedAt = dayjs(content.publishedAt).format('YYYY-MM-DD');
+const updatedAt = dayjs(content.updatedAt).format('YYYY-MM-DD');
+---
+
+<Breadcrumbs
+  items={[{ title: 'ブログ', href: '/blog/' }, { title: content.title }]}
+/>
+<section class="prose">
+  <header>
+    <h1>{content.title}</h1>
+    <dl class="text-description grid grid-cols-[auto_1fr] gap-y-1 text-sm">
+      <dt>公開日:</dt>
+      <dd>
+        <time datetime={publishedAt}
+          >{dayjs(content.publishedAt).format('YYYY年M月D日')}</time
+        >
+      </dd>
+      {
+        publishedAt !== updatedAt && (
+          <>
+            <dt>更新日:</dt>
+            <dd>
+              <time datetime={updatedAt}>
+                {dayjs(content.updatedAt).format('YYYY年M月D日')}
+              </time>
+            </dd>
+          </>
+        )
+      }
+    </dl>
+  </header>
+  <div set:html={html} />
+</section>

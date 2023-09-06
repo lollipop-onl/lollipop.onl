@@ -2,12 +2,6 @@ const typography = (theme) => ({
   DEFAULT: {
     css: {
       letterSpacing: theme('letterSpacing.md'),
-      // paragraphs
-      p: {
-        marginBottom: theme('spacing.2'),
-        fontSize: '1rem',
-        lineHeight: theme('lineHeight.lg'),
-      },
       // headings
       h1: {
         marginTop: theme('spacing.16'),
@@ -66,6 +60,12 @@ const typography = (theme) => ({
           lineHeight: theme('lineHeight.md'),
         },
       },
+      // paragraphs
+      p: {
+        marginBottom: theme('spacing.2'),
+        fontSize: '1rem',
+        lineHeight: theme('lineHeight.lg'),
+      },
       // decorations
       b: {
         fontWeight: theme('fontWeight.bold'),
@@ -79,6 +79,32 @@ const typography = (theme) => ({
         '&:hover': {
           textDecoration: 'none',
         },
+      },
+      // code block
+      pre: {
+        backgroundColor: theme('colors.sumi.100'),
+        borderRadius: theme('borderRadius.lg'),
+        padding: theme('spacing.5'),
+        marginBottom: theme('spacing.6'),
+      },
+      // list
+      'ul, ol': {
+        display: 'grid',
+        gap: theme('spacing.1'),
+        marginBottom: theme('spacing.2'),
+        paddingLeft: '1.5em',
+      },
+      'li > ul, li > ol': {
+        marginBottom: '0',
+      },
+      ul: {
+        listStyleType: 'disc',
+      },
+      ol: {
+        listStyleType: 'decimal',
+      },
+      'li > ol': {
+        listStyleType: 'lower-alpha',
       },
     },
   },

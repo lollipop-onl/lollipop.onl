@@ -1,6 +1,5 @@
 import plugin from 'tailwindcss/plugin';
 import { colors, semanticColors } from './colors';
-import typography from './typography';
 
 /** @type {import('tailwindcss/types/config').PluginCreator} */
 const main = ({ addUtilities }) => {
@@ -48,6 +47,5 @@ export default plugin(main, {
     colors: {
       ...colors,
     },
-    typography,
   },
 });

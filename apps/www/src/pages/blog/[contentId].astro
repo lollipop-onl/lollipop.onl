@@ -1,6 +1,6 @@
 ---
-import { marked } from 'marked';
 import Layout from "@layouts/Layout.astro";
+import Article from '@components/Article.astro';
 import type { GetStaticPaths } from "astro";
 import { getBlogEntities } from 'microcms-client';
 
@@ -19,17 +19,8 @@ export const getStaticPaths = (async () => {
 
 type Props = Awaited<ReturnType<typeof getStaticPaths>>[number]['props'];
 const { content } = Astro.props;
-
-const html = marked.parse(content.body ?? '');
 ---
 
 <Layout>
-  <div class="rounded-lg bg-sumi-50 overflow-hidden">
-    <div class="bg-sea-50 md:px-8 px-5 pt-8 pb-8 grid gap-3">
-      <h1 class="text-2xl font-medium md:font-regular md:text-xl leading-sm">{content.title}</h1>
-    </div>
-    <div class="px-5 md:px-8 py-12">
-      <div class="prose" set:html={html} />
-    </div>
-  </div>
+  <Article content={content} />
 </Layout>

@@ -1,0 +1,33 @@
+---
+type Props = {
+  items: Array<{
+    title: string;
+    href?: string;
+  }>;
+};
+const { items } = Astro.props;
+---
+
+<nav>
+  <ol class="inline">
+    {
+      [{ title: 'ホーム', href: '/' }, ...items].map(
+        ({ title, href }, i) => (
+          <li class="inline text-sm text-description">
+            { i > 0 && <span class="w-3 inline-block h-3 icon-[carbon--chevron-right] mx-1.5" /> }
+            {href ? (
+              <a
+                class="text-link visited:text-visited underline hover:no-underline"
+                href={href}
+              >
+                {title}
+              </a>
+            ) : (
+              title
+            )}
+          </li>
+        ),
+      )
+    }
+  </ol>
+</nav>
