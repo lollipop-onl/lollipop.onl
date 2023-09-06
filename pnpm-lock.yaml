@@ -166,6 +166,18 @@ importers:
         specifier: ^3.28.1
         version: 3.28.1
 
+  packages/remark-extensions:
+    devDependencies:
+      '@types/node':
+        specifier: ^20.5.7
+        version: 20.5.7
+      tsconfigs:
+        specifier: workspace:^
+        version: link:../tsconfigs
+      typescript:
+        specifier: ^5.2.2
+        version: 5.2.2
+
   packages/tsconfigs:
     dependencies:
       '@tsconfig/node20':

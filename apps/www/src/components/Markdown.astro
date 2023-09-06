@@ -1,0 +1,13 @@
+---
+import { Marked } from 'marked';
+
+type Props = {
+  content: string | undefined;
+};
+const { content } = Astro.props;
+
+const marked = new Marked({ breaks: true });
+const html = marked.parse(content ?? '');
+---
+
+<div set:html={html} />

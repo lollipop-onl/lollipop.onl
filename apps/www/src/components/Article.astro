@@ -1,17 +1,13 @@
 ---
 import dayjs from 'dayjs';
-import { marked } from 'marked';
 import type { BlogEntity, MicroCMSListContent } from 'microcms-client';
 import Breadcrumbs from '@components/Breadcrumbs.astro';
+import Markdown from '@components/Markdown.astro';
 
 type Props = {
   content: BlogEntity & MicroCMSListContent;
 };
 const { content } = Astro.props;
-
-const html = marked.parse(content.body ?? '', {
-  breaks: true,
-});
 
 const publishedAt = dayjs(content.publishedAt).format('YYYY-MM-DD');
 const updatedAt = dayjs(content.updatedAt).format('YYYY-MM-DD');
@@ -44,5 +40,5 @@ const updatedAt = dayjs(content.updatedAt).format('YYYY-MM-DD');
       }
     </dl>
   </header>
-  <div set:html={html} />
+  <Markdown content={content.body} />
 </section>
