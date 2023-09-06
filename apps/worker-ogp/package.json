@@ -1,5 +1,5 @@
 {
-  "name": "worker",
+  "name": "worker-ogp",
   "version": "1.0.0",
   "private": true,
   "type": "module",
@@ -9,11 +9,12 @@
     "dev": "wrangler dev $npm_package_main"
   },
   "dependencies": {
+    "cheerio": "1.0.0-rc.12",
     "hono": "^3.5.6"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20230821.0",
-    "@tsconfig/node20": "^20.1.2",
+        "@tsconfig/node20": "^20.1.2",
     "wrangler": "^3.6.0"
   }
 }

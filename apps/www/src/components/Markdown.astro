@@ -1,5 +1,6 @@
 ---
 import { Marked } from 'marked';
+import { ogLink, codeBlock } from 'marked-extensions';
 
 type Props = {
   content: string | undefined;
@@ -7,6 +8,10 @@ type Props = {
 const { content } = Astro.props;
 
 const marked = new Marked({ breaks: true });
+
+marked.use(ogLink);
+marked.use(codeBlock);
+
 const html = marked.parse(content ?? '');
 ---
 

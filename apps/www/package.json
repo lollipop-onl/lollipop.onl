@@ -17,6 +17,7 @@
     "dayjs": "^1.11.9",
     "digital-agency-design-system": "workspace:^",
     "marked": "^8.0.0",
+    "marked-extensions": "workspace:^",
     "microcms-client": "workspace:^",
     "microcms-field-extensions": "workspace:^",
     "react": "^18.2.0",

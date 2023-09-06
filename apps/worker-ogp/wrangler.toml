@@ -1,0 +1,6 @@
+name="simochee-net-ogp"
+main="src/index.ts"
+compatibility_date="2023-08-14"
+
+[dev]
+port = 8082
