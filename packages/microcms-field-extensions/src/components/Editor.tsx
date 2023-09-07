@@ -12,6 +12,7 @@ export const Editor: React.FC<Props> = ({ workerURL }) => {
   const { message, postData } = useFieldExtension<string | undefined>();
   const [data, setData] = useState('');
 
+  /** フィアルアップロードを実行する */
   const onPasteImage = async (file: File) => {
     const url = new URL(workerURL);
 
@@ -47,6 +48,7 @@ export const Editor: React.FC<Props> = ({ workerURL }) => {
     editorRef.current?.setValue(message?.data ?? '');
   }, [message]);
 
+  /** エディタにペーストイベントを仕込む */
   useEffect(() => {
     const callback = (e: ClipboardEvent) => {
       if (!e.clipboardData?.items) return;
