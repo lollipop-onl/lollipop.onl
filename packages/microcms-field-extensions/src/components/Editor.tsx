@@ -14,6 +14,8 @@ export const Editor: React.FC<Props> = ({ workerURL }) => {
 
   /** フィアルアップロードを実行する */
   const onPasteImage = async (file: File) => {
+    console.log('try file upload', file);
+
     const url = new URL(workerURL);
 
     url.pathname = '/gyazo/upload';
@@ -23,11 +25,16 @@ export const Editor: React.FC<Props> = ({ workerURL }) => {
       body: new Blob([file], { type: file.type }),
     });
 
+    console.log(res);
+
     if (!res.ok) throw new Error('failed to upload');
 
     const { url: imageUrl } = await res.json();
+    console.log('upload complete', imageUrl);
     const editor = editorRef.current;
     const position = editor?.getPosition();
+
+    console.log('check exists', editor, position);
 
     if (!position || !editor) return;
 
