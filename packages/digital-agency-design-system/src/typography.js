@@ -119,10 +119,9 @@ const typography = (theme) => ({
         display: 'grid',
         placeItems: 'start',
         overflow: 'hidden',
-        backgroundColor: '#fff',
+        backgroundColor: theme('colors.sumi.50'),
         borderRadius: theme('borderRadius.md'),
         marginBottom: theme('spacing.6'),
-        color: theme('colors.sumi.100'),
         wordBreak: 'break-all',
       },
       '.code-block .scroller': {
@@ -142,7 +141,7 @@ const typography = (theme) => ({
       },
       '.code-block .label': {
         display: 'inline-flex',
-        backgroundColor: '#3b4252',
+        backgroundColor: theme('colors.sumi.700'),
         paddingLeft: theme('spacing.4'),
         paddingRight: theme('spacing.2'),
         paddingTop: theme('spacing.4'),
@@ -150,6 +149,7 @@ const typography = (theme) => ({
         marginBottom: '-8px',
         marginRight: theme('spacing.5'),
         borderBottomRightRadius: theme('borderRadius.sm'),
+        color: theme('colors.white'),
         fontSize: theme('fontSize.sm'),
       },
       // custom elements
@@ -160,14 +160,6 @@ const typography = (theme) => ({
       ':where(p, li) > link-card': {
         display: 'inline',
         marginBottom: theme('spacing.0'),
-      },
-      'code-block': {
-        display: 'block',
-        backgroundColor: theme('colors.sumi.100'),
-        borderRadius: theme('borderRadius.lg'),
-        padding: theme('spacing.5'),
-        marginBottom: theme('spacing.6'),
-        fontFamily: theme('fontFamily.mono'),
       },
     },
   },
