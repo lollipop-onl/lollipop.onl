@@ -1,10 +1,13 @@
 import type { MicroCMSListContent } from 'microcms-js-sdk';
 
-export type BlogEntity = {
-  thumbnail: string;
+export type BlogPostEntity = {
   title: string;
-  lead: string;
+  category?: BlogCategoryEntity;
   body?: string;
+};
+
+export type BlogCategoryEntity = {
+  name: string;
 };
 
 export { MicroCMSListContent };

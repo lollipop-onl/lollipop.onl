@@ -1,11 +1,11 @@
 ---
 import dayjs from 'dayjs';
-import type { BlogEntity, MicroCMSListContent } from 'microcms-client';
+import type { BlogPostEntity, MicroCMSListContent } from 'microcms-client';
 import Breadcrumbs from '@components/Breadcrumbs.astro';
 import Markdown from '@components/Markdown.astro';
 
 type Props = {
-  content: BlogEntity & MicroCMSListContent;
+  content: BlogPostEntity & MicroCMSListContent;
 };
 const { content } = Astro.props;
 

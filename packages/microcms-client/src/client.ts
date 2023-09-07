@@ -1,5 +1,5 @@
 import { createClient } from 'microcms-js-sdk';
-import { BlogEntity } from './types';
+import { BlogPostEntity } from './types';
 
 const { MICROCMS_SERVICE_DOMAIN, MICROCMS_API_KEY } = process.env;
 
@@ -15,8 +15,8 @@ const client = createClient({
 });
 
 export const getBlogEntities = async () => {
-  const { contents, totalCount } = await client.getList<BlogEntity>({
-    endpoint: 'blog',
+  const { contents, totalCount } = await client.getList<BlogPostEntity>({
+    endpoint: 'blog-posts',
   });
 
   return {

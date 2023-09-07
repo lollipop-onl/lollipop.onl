@@ -10,12 +10,12 @@ const { contents, totalCount } = await getBlogEntities();
 <Layout>
   <Breadcrumbs items={[{ title: 'ブログ'}]} />
   <ul class="grid gap-8 mt-8">
-    {contents.map(({ id, title, updatedAt }) => (
+    {contents.map(({ id, category, title, updatedAt }) => (
       <li>
         <ArticleCard 
           href={`/blog/${id}/`}
           title={title}
-          category='テクニカルノート'
+          category={category?.name}
           datetime={updatedAt}
         />
       </li>
