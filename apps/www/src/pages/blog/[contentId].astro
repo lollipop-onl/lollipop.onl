@@ -21,6 +21,9 @@ type Props = Awaited<ReturnType<typeof getStaticPaths>>[number]['props'];
 const { content } = Astro.props;
 ---
 
-<Layout>
+<Layout
+  title={content.title}
+  openGraph={{ type: 'article' }}
+>
   <Article content={content} />
 </Layout>

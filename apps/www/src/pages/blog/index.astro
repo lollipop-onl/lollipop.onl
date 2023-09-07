@@ -7,7 +7,10 @@ import Breadcrumbs from '@components/Breadcrumbs.astro';
 const { contents, totalCount } = await getBlogEntities();
 ---
 
-<Layout>
+<Layout
+  title='ブログ'
+  openGraph={{ type: 'blog' }}
+>
   <Breadcrumbs items={[{ title: 'ブログ'}]} />
   <ul class="grid gap-8 mt-8">
     {contents.map(({ id, category, title, updatedAt }) => (
