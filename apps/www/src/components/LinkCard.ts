@@ -67,7 +67,7 @@ export class LinkCard extends LitElement {
           target="_blank"
         >
           <span class="flex h-32 items-center justify-between gap-2">
-            <span class="p-4">
+            <span class="overflow-hidden p-4">
               <span class="text-body flex items-center gap-2 text-xs">
                 <img
                   class="aspect-square h-4 w-4"
