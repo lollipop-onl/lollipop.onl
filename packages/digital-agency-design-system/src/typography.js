@@ -86,6 +86,14 @@ const typography = (theme) => ({
         paddingInline: theme('spacing.5'),
         paddingBlock: theme('spacing.2'),
         marginBottom: theme('spacing.6'),
+        color: theme('colors.sumi.700'),
+      },
+      ':where(p, li) > code': {
+        backgroundColor: theme('colors.sumi.100'),
+        borderRadius: theme('borderRadius.sm'),
+        paddingInline: theme('spacing.2'),
+        paddingBlock: theme('spacing.1'),
+        fontFamily: theme('fontFamily.mono'),
       },
       // list
       'ul, ol': {
@@ -111,18 +119,28 @@ const typography = (theme) => ({
         display: 'grid',
         placeItems: 'start',
         overflow: 'hidden',
-        backgroundColor: '#2e3440',
+        backgroundColor: '#fff',
         borderRadius: theme('borderRadius.md'),
         marginBottom: theme('spacing.6'),
         color: theme('colors.sumi.100'),
         wordBreak: 'break-all',
       },
-      '.code-block > pre': {
-        paddingInline: theme('spacing.3'),
+      '.code-block .scroller': {
+        display: 'grid',
+        gridTemplateColumns: 'auto 1fr auto',
+        width: '100%',
+        overflow: 'auto',
+      },
+      '.code-block .scroller > .gap': {
+        display: 'block',
+        width: theme('spacing.3'),
+        height: '100%',
+      },
+      '.code-block pre': {
         paddingBlock: theme('spacing.5'),
         fontFamily: theme('fontFamily.mono'),
       },
-      '.code-block > .label': {
+      '.code-block .label': {
         display: 'inline-flex',
         backgroundColor: '#3b4252',
         paddingLeft: theme('spacing.4'),
@@ -139,7 +157,7 @@ const typography = (theme) => ({
         display: 'block',
         marginBottom: theme('spacing.2'),
       },
-      'p > link-card': {
+      ':where(p, li) > link-card': {
         display: 'inline',
         marginBottom: theme('spacing.0'),
       },

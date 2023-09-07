@@ -1,6 +1,5 @@
 import type { MarkedExtension } from 'marked';
 import hljs from 'highlight.js';
-import escape from 'escape-html';
 import javascript from 'highlight.js/lib/languages/javascript';
 import typescript from 'highlight.js/lib/languages/typescript';
 import markdown from 'highlight.js/lib/languages/markdown';
@@ -35,7 +34,11 @@ export const codeBlock = {
       return `
         <div class="code-block">
           ${label ? `<div class="label">${label}</div>` : '<!-- plain text -->'}
-          <pre><code>${highlighted}</code></pre>
+          <div class="scroller">
+            <div class="gap"></div>
+            <pre><code>${highlighted}</code></pre>
+            <div class="gap"></div>
+          </div>
         </div>
       `;
     },
