@@ -15,7 +15,7 @@ const { contents, totalCount } = await getBlogEntities();
         <ArticleCard 
           href={`/blog/${id}/`}
           title={title}
-          category={category?.name}
+          category={category?.name || '未分類'}
           datetime={updatedAt}
         />
       </li>
