@@ -5,9 +5,10 @@ import { createHashRouter, Outlet, RouterProvider } from 'react-router-dom';
 
 type Props = {
   origin: string;
+  workerURL: string;
 };
 
-export const FieldExtensions: React.FC<Props> = ({ origin }) => {
+export const FieldExtensions: React.FC<Props> = ({ origin, workerURL }) => {
   const router = createHashRouter([
     {
       path: '/',
@@ -23,7 +24,7 @@ export const FieldExtensions: React.FC<Props> = ({ origin }) => {
         },
         {
           path: 'markdown',
-          element: <Editor />,
+          element: <Editor workerURL={workerURL} />,
         },
         {
           path: '*',
