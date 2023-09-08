@@ -15,7 +15,10 @@ export class LinkCard extends LitElement {
   }
 
   get isInline() {
-    return this.parentElement?.tagName === 'P';
+    return (
+      !!this.parentElement &&
+      ['P', 'LI', 'BLOCKQUOTE'].includes(this.parentElement.tagName)
+    );
   }
 
   connectedCallback() {
