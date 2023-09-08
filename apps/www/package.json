@@ -16,6 +16,7 @@
     "@astrojs/tailwind": "^5.0.0",
     "@types/webfontloader": "^1.6.35",
     "astro": "^3.0.1",
+    "astro-robots-txt": "^0.5.0",
     "dayjs": "^1.11.9",
     "digital-agency-design-system": "workspace:^",
     "highlight.js": "^11.8.0",

@@ -4,6 +4,7 @@ import react from '@astrojs/react';
 import tailwind from '@astrojs/tailwind';
 import partytown from '@astrojs/partytown';
 import sitemap from '@astrojs/sitemap';
+import robotsTxt from 'astro-robots-txt';
 
 export default defineConfig({
   site: 'https://simochee.net',
@@ -17,5 +18,6 @@ export default defineConfig({
       },
     }),
     sitemap(),
+    robotsTxt(),
   ],
 });
