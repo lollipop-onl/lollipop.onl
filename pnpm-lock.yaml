@@ -79,9 +79,6 @@ importers:
       '@astrojs/tailwind':
         specifier: ^5.0.0
         version: 5.0.0(astro@3.0.1)(tailwindcss@3.3.3)
-      '@types/webfontloader':
-        specifier: ^1.6.35
-        version: 1.6.35
       astro:
         specifier: ^3.0.1
         version: 3.0.1
@@ -121,9 +118,6 @@ importers:
       tailwind-merge:
         specifier: ^1.14.0
         version: 1.14.0
-      webfontloader:
-        specifier: ^1.6.28
-        version: 1.6.28
     devDependencies:
       '@iconify-json/carbon':
         specifier: ^1.1.21
@@ -1614,10 +1608,6 @@ packages:
 
   /@types/unist@2.0.7:
     resolution: {integrity: sha512-cputDpIbFgLUaGQn6Vqg3/YsJwxUwHLO13v3i5ouxT4lat0khip9AEWxtERujXV9wxIB1EyF97BSJFt6vpdI8g==}
-    dev: false
-
-  /@types/webfontloader@1.6.35:
-    resolution: {integrity: sha512-IJlrsiDWq6KghQ7tPlL5tcwSUyOxLDceT+AFUY7Ylj0Fcv3/h3QkANqQxZ0B5mEpEKxhTw76vDmvrruSMV9n9Q==}
     dev: false
 
   /@vitejs/plugin-react@4.0.4(vite@4.4.9):
@@ -5386,10 +5376,6 @@ packages:
   /web-streams-polyfill@3.2.1:
     resolution: {integrity: sha512-e0MO3wdXWKrLbL0DgGnUV7WHVuw9OUvL4hjgnPkIeEvESk74gAITi5G606JtZPp39cd8HA9VQzCIvA49LpPN5Q==}
     engines: {node: '>= 8'}
-    dev: false
-
-  /webfontloader@1.6.28:
-    resolution: {integrity: sha512-Egb0oFEga6f+nSgasH3E0M405Pzn6y3/9tOVanv/DLfa1YBIgcv90L18YyWnvXkRbIM17v5Kv6IT2N6g1x5tvQ==}
     dev: false
 
   /webidl-conversions@3.0.1:
