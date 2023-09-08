@@ -29,11 +29,14 @@ export const codeBlock = {
       const highlighted = language
         ? hljs.highlight(code, { language }).value
         : code;
-      const label = fileName || hljs.getLanguage(language)?.name;
 
       return `
         <div class="code-block">
-          ${label ? `<div class="label">${label}</div>` : '<!-- plain text -->'}
+          ${
+            fileName
+              ? `<div class="label">${fileName}</div>`
+              : '<!-- plain text -->'
+          }
           <div class="scroller">
             <div class="gap"></div>
             <pre><code>${highlighted}</code></pre>
