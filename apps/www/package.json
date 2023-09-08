@@ -13,8 +13,7 @@
     "@astrojs/partytown": "^2.0.0",
     "@astrojs/react": "^3.0.0",
     "@astrojs/tailwind": "^5.0.0",
-    "@fontsource/ibm-plex-mono": "^5.0.8",
-    "@fontsource/ibm-plex-sans-jp": "^5.0.7",
+    "@types/webfontloader": "^1.6.35",
     "astro": "^3.0.1",
     "dayjs": "^1.11.9",
     "digital-agency-design-system": "workspace:^",
@@ -26,7 +25,8 @@
     "microcms-field-extensions": "workspace:^",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "tailwind-merge": "^1.14.0"
+    "tailwind-merge": "^1.14.0",
+    "webfontloader": "^1.6.28"
   },
   "devDependencies": {
     "@iconify-json/carbon": "^1.1.21",

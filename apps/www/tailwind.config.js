@@ -1,5 +1,3 @@
-import { family as IBMPlexSansJP } from '@fontsource/ibm-plex-sans-jp/metadata.json' assert { type: 'json' };
-import { family as IBMPlexMono } from '@fontsource/ibm-plex-mono/metadata.json' assert { type: 'json' };
 import typography from '@tailwindcss/typography';
 import { addDynamicIconSelectors } from '@iconify/tailwind';
 import digitalAgencyDesignSystem from 'digital-agency-design-system';
@@ -13,8 +11,8 @@ const config = {
   ],
   theme: {
     fontFamily: {
-      sans: [IBMPlexSansJP, 'sans-serif'],
-      mono: [IBMPlexMono, IBMPlexSansJP, 'monospace'],
+      sans: ['IBM Plex Sans JP', 'sans-serif'],
+      mono: ['IBM Plex Mono', 'IBM Plex Sans JP', 'monospace'],
     },
     typography: digitalAgencyDesignSystemTypography,
     extend: {},

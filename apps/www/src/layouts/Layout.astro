@@ -2,10 +2,8 @@
 import Header from '@components/Header.astro';
 import Footer from '@components/Footer.astro';
 import Menu from '@components/Menu.astro'
+import WebFont from '@components/WebFont.astro';
 import { SITE_NAME } from '@constants';
-import '@fontsource/ibm-plex-sans-jp/400.css';
-import '@fontsource/ibm-plex-sans-jp/500.css';
-import '@fontsource/ibm-plex-sans-jp/700.css';
 
 type Props = {
   title?: string;
@@ -62,5 +60,6 @@ const { title, openGraph } = Astro.props;
         <Footer />
       </div>
     </div>
+    <WebFont />
   </body>
 </html>
