@@ -3,8 +3,10 @@ import lit from '@astrojs/lit';
 import react from '@astrojs/react';
 import tailwind from '@astrojs/tailwind';
 import partytown from '@astrojs/partytown';
+import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
+  site: 'https://simochee.net',
   integrations: [
     lit(),
     react(),
@@ -14,5 +16,6 @@ export default defineConfig({
         forward: ['dataLayer.push'],
       },
     }),
+    sitemap(),
   ],
 });
