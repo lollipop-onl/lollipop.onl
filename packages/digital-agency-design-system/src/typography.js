@@ -1,6 +1,7 @@
 const typography = (theme) => ({
   DEFAULT: {
     css: {
+      wordBreak: 'break-word',
       letterSpacing: theme('letterSpacing.md'),
       // headings
       h1: {
