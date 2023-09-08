@@ -41,12 +41,32 @@ app.put('/gyazo/upload', async (c) => {
     );
   }
 
-  const { image_id, thumb_url, url } = await res.json<any>();
+  const { permalink_url } = await res.json<any>();
+
+  const url = new URL('https://api.gyazo.com/api/oembed');
+
+  url.searchParams.set('url', permalink_url);
+
+  const res2 = await fetch(url);
+
+  if (!res2.ok) {
+    const data = await res.text();
+
+    return c.json(
+      {
+        status: res.status,
+        data,
+      },
+      res.status,
+    );
+  }
+
+  const { url: imageURL, width, height } = await res2.json<any>();
 
   return c.json({
-    id: image_id,
-    url: url,
-    thumbUrl: thumb_url,
+    url: imageURL,
+    width,
+    height,
   });
 });
 

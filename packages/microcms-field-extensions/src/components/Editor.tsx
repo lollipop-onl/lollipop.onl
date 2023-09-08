@@ -25,11 +25,20 @@ export const Editor: React.FC<Props> = ({ workerURL }) => {
 
     if (!res.ok) throw new Error('failed to upload');
 
-    const { url: imageUrl } = await res.json();
+    const { url: imageUrl, width, height } = await res.json();
     const editor = editorRef.current;
     const position = editor?.getPosition();
 
     if (!position || !editor) return;
+
+    const html = [
+      '<img',
+      `src="${imageUrl}"`,
+      'alt="image"',
+      width ? `width="${width}"` : '',
+      height ? `height="${height}"` : '',
+      '>',
+    ].join(' ');
 
     editor.executeEdits('', [
       {
@@ -39,7 +48,7 @@ export const Editor: React.FC<Props> = ({ workerURL }) => {
           position.lineNumber,
           position.column,
         ),
-        text: `\n![image](${imageUrl})\n\n`,
+        text: `\n\n${html}\n`,
       },
     ]);
   };
