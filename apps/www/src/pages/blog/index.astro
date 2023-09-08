@@ -15,13 +15,13 @@ const { contents, totalCount } = await getBlogEntities();
   <h1 class="mt-16 mb-6 text-3xl font-medium leading-md md:text-4xl md:font-regular md:leading-sm">ブログ</h1>
   <p class="text-description text-sm">{totalCount}件の記事</p>
   <ul class="grid gap-8 mt-8">
-    {contents.map(({ id, category, title, updatedAt }) => (
+    {contents.map(({ id, category, title, publishedAt }) => (
       <li>
         <ArticleCard 
           href={`/blog/${id}/`}
           title={title}
           category={category?.name || '未分類'}
-          datetime={updatedAt}
+          datetime={publishedAt}
         />
       </li>
     ))}
