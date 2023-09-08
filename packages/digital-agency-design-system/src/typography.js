@@ -88,6 +88,12 @@ const typography = (theme) => ({
         marginBottom: theme('spacing.6'),
         color: theme('colors.sumi.700'),
       },
+      'blockquote > p:last-child': {
+        marginBottom: theme('spacing.0'),
+      },
+      'p > img': {
+        marginBottom: theme('spacing.6'),
+      },
       ':where(p, li) > code': {
         backgroundColor: theme('colors.sumi.100'),
         borderRadius: theme('borderRadius.sm'),
