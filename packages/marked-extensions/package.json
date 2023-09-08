@@ -11,11 +11,11 @@
   },
   "dependencies": {
     "highlight.js": "^11.8.0",
-    "marked": "^8.0.0"
+    "marked": "^8.0.1"
   },
   "devDependencies": {
     "@types/escape-html": "^1.0.2",
-    "@types/node": "^20.5.7",
+    "@types/node": "^20.5.9",
     "tsconfigs": "workspace:^",
     "typescript": "^5.2.2"
   }

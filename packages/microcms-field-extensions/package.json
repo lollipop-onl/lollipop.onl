@@ -22,6 +22,6 @@
     "@tsconfig/vite-react": "^2.0.0",
     "@types/react": "^18.2.21",
     "monaco-editor": "^0.41.0",
-    "rollup": "^3.28.1"
+    "rollup": "^3.29.0"
   }
 }

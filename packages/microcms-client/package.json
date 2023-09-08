@@ -13,7 +13,7 @@
     "microcms-js-sdk": "^2.5.0"
   },
   "devDependencies": {
-    "@types/node": "^20.5.7",
+    "@types/node": "^20.5.9",
     "tsconfigs": "workspace:^",
     "typescript": "^5.2.2"
   }
