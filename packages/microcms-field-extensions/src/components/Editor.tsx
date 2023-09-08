@@ -31,14 +31,7 @@ export const Editor: React.FC<Props> = ({ workerURL }) => {
 
     if (!position || !editor) return;
 
-    const html = [
-      '<img',
-      `src="${imageUrl}"`,
-      'alt="image"',
-      width ? `width="${width}"` : '',
-      height ? `height="${height}"` : '',
-      '>',
-    ].join(' ');
+    const size = width && height ? ` =${width}x${height}` : '';
 
     editor.executeEdits('', [
       {
@@ -48,7 +41,7 @@ export const Editor: React.FC<Props> = ({ workerURL }) => {
           position.lineNumber,
           position.column,
         ),
-        text: `\n\n${html}\n`,
+        text: `\n![image](${imageUrl}${size})\n\n`,
       },
     ]);
   };
