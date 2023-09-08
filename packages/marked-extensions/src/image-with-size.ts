@@ -1,11 +1,4 @@
-import {
-  TokenizerAndRendererExtension,
-  MarkedExtension,
-  Tokens,
-  Tokenizer,
-  Renderer,
-  Lexer,
-} from 'marked';
+import { TokenizerAndRendererExtension } from 'marked';
 
 export const imageWithSize: TokenizerAndRendererExtension = {
   name: 'image-with-size',
@@ -13,7 +6,7 @@ export const imageWithSize: TokenizerAndRendererExtension = {
   start(src) {
     return src.indexOf('![');
   },
-  tokenizer(src, tokens) {
+  tokenizer(src) {
     const rule = /^!\[(.*?)\]\(([^ ]*?)(?: =(\w+)x(\w+))?\)/;
     const match = rule.exec(src);
 
@@ -21,7 +14,7 @@ export const imageWithSize: TokenizerAndRendererExtension = {
       const [, text, href, width, height] = match;
 
       if (width && height) {
-        const token: Tokens.Generic = {
+        return {
           type: 'image-with-size',
           raw: match[0],
           href,
@@ -30,8 +23,6 @@ export const imageWithSize: TokenizerAndRendererExtension = {
           width,
           height,
         };
-
-        return token;
       }
     }
   },

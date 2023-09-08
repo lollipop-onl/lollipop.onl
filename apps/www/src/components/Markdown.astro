@@ -1,6 +1,6 @@
 ---
 import { Marked } from 'marked';
-import { linkCard, codeBlock, imageWithSize } from 'marked-extensions';
+import { linkCard, codeBlock, imageWithSize, embed } from 'marked-extensions';
 import 'highlight.js/styles/github.css';
 
 type Props = {
@@ -10,7 +10,7 @@ const { content } = Astro.props;
 
 const marked = new Marked({
   breaks: true,
-  extensions: [imageWithSize],
+  extensions: [imageWithSize, embed],
   walkTokens(token) {
     // ol の初期値を常に 0 からにする
     if (token.type === 'list') {

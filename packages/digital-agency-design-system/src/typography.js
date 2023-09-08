@@ -117,6 +117,12 @@ const typography = (theme) => ({
       'li > ol': {
         listStyleType: 'lower-alpha',
       },
+      // embed content
+      '.embed-youtube': {
+        width: '100%',
+        height: 'auto',
+        aspectRatio: '16 / 9',
+      },
       // code block
       '.code-block': {
         display: 'grid',
