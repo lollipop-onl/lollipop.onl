@@ -1,6 +1,6 @@
 ---
 import { Marked } from 'marked';
-import { linkCard, codeBlock } from 'marked-extensions';
+import { linkCard, codeBlock, imageWithSize } from 'marked-extensions';
 import '@fontsource/ibm-plex-mono';
 import 'highlight.js/styles/github.css';
 
@@ -11,6 +11,7 @@ const { content } = Astro.props;
 
 const marked = new Marked({
   breaks: true,
+  extensions: [imageWithSize],
   walkTokens(token) {
     // ol の初期値を常に 0 からにする
     if (token.type === 'list') {
