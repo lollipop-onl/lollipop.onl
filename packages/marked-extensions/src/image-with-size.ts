@@ -36,7 +36,7 @@ export const imageWithSize: TokenizerAndRendererExtension = {
     }
   },
   renderer(token) {
-    let out = `<img src="${token.href}" alt="${token.text}" width="${token.width}" height="${token.height}"`;
+    let out = `<img src="${token.href}" alt="${token.text}" width="${token.width}" height="${token.height}" loading="lazy"`;
 
     if (token.title) {
       out += ` title="${token.title}"`;

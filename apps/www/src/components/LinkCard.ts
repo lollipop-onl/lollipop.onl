@@ -71,9 +71,9 @@ export class LinkCard extends LitElement {
         >
           <span class="flex h-32 items-center justify-between gap-2">
             <span class="overflow-hidden p-4">
-              <span class="text-body flex items-center gap-2 text-xs">
+              <span class="text-body line-clamp-1 space-x-2 text-xs">
                 <img
-                  class="aspect-square h-4 w-4"
+                  class="inline h-4 w-4"
                   src="https://www.google.com/s2/favicons?domain=${this.domain}"
                   alt=""
                 />
@@ -97,6 +97,7 @@ export class LinkCard extends LitElement {
                 class="aspect-square h-full object-cover md:aspect-auto"
                 src="${this.data.imageUrl}"
                 alt="リンク先ページのサムネイル"
+                loading="lazy"
               />
             `}
           </span>
