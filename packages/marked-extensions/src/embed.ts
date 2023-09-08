@@ -11,6 +11,20 @@ const renderIFrame = (input: string): string => {
     return `<iframe class="embed-youtube" src="https://www.youtube.com/embed/${videoId}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
   }
 
+  if (url.hostname === 'stackblitz.com') {
+    url.searchParams.set('embed', '1');
+    url.searchParams.set('ctl', '1');
+    url.searchParams.set('theme', 'light');
+
+    return `<iframe class="embed-stackblitz" src="${url.toString()}" allowfullscreen></iframe>`;
+  }
+
+  if (url.hostname === 'www.figma.com') {
+    const src = encodeURIComponent(`${url.origin}${url.pathname}`);
+
+    return `<iframe class="embed-figma" src="https://www.figma.com/embed?embed_host=astra&url=${src}" allowfullscreen></iframe>`;
+  }
+
   throw new Error('Invalid embed URL');
 };
 

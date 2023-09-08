@@ -124,6 +124,16 @@ const typography = (theme) => ({
         height: 'auto',
         aspectRatio: '16 / 9',
       },
+      '.embed-figma': {
+        width: '100%',
+        height: 'auto',
+        aspectRatio: '4 / 3',
+      },
+      '.embed-stackblitz': {
+        width: '100%',
+        height: 'auto',
+        aspectRatio: '4 / 3',
+      },
       // code block
       '.code-block': {
         display: 'grid',
