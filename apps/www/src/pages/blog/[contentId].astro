@@ -1,6 +1,7 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import Article from '@components/Article.astro';
+import DisqusThread from "@components/DisqusThread.astro";
 import type { GetStaticPaths } from "astro";
 import { getBlogEntities } from 'microcms-client';
 
@@ -26,4 +27,7 @@ const { content } = Astro.props;
   openGraph={{ type: 'article' }}
 >
   <Article content={content} />
+  <div class="mt-20">
+    <DisqusThread />
+  </div>
 </Layout>
