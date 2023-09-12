@@ -7,6 +7,9 @@ type Props = {
   workerURL: string;
 };
 
+const isTouchDevice =
+  typeof window.ontouchstart !== 'undefined' && navigator.maxTouchPoints > 0;
+
 export const Editor: React.FC<Props> = ({ workerURL }) => {
   const editorRef = useRef<editor.IStandaloneCodeEditor>();
   const { message, postData } = useFieldExtension<string | undefined>();
@@ -82,23 +85,37 @@ export const Editor: React.FC<Props> = ({ workerURL }) => {
   return (
     <div>
       <div className="border-sumi-300 overflow-hidden rounded border">
-        <MonacoEditor
-          height={500}
-          defaultLanguage="markdown"
-          defaultValue={message?.data ?? ''}
-          options={{
-            wordWrap: 'on',
-            scrollBeyondLastLine: false,
-            renderLineHighlight: 'none',
-          }}
-          onMount={(editor) => {
-            editorRef.current = editor;
-          }}
-          onChange={(value = '') => {
-            postData({ data: value });
-            setData(value);
-          }}
-        />
+        {isTouchDevice ? (
+          <textarea
+            className="w-full"
+            style={{ height: '500px' }}
+            defaultValue={message?.data ?? ''}
+            onChange={({ target }) => {
+              if (target instanceof HTMLTextAreaElement) {
+                postData({ data: target.value });
+                setData(target.value);
+              }
+            }}
+          />
+        ) : (
+          <MonacoEditor
+            height={500}
+            defaultLanguage="markdown"
+            defaultValue={message?.data ?? ''}
+            options={{
+              wordWrap: 'on',
+              scrollBeyondLastLine: false,
+              renderLineHighlight: 'none',
+            }}
+            onMount={(editor) => {
+              editorRef.current = editor;
+            }}
+            onChange={(value = '') => {
+              postData({ data: value });
+              setData(value);
+            }}
+          />
+        )}
       </div>
       <p className="mt-1 text-right text-xs text-gray-400">{data.length}</p>
     </div>
