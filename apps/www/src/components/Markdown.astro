@@ -26,8 +26,10 @@ const html = marked.parse(content ?? '');
 
 <script>
   import { LinkCard } from '@components/LinkCard';
+  import { TwitterWidget } from '@components/TwitterWidget';
 
   customElements.define('link-card', LinkCard);
+  customElements.define('twitter-widget', TwitterWidget);
 </script>
 
 <div set:html={html} />

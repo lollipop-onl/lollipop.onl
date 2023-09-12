@@ -25,6 +25,12 @@ const renderIFrame = (input: string): string => {
     return `<iframe class="embed-figma" src="https://www.figma.com/embed?embed_host=astra&url=${src}" allowfullscreen></iframe>`;
   }
 
+  if (url.hostname === 'twitter.com' || url.hostname === 'x.com') {
+    const id = url.pathname.split('/').pop();
+
+    return `<twitter-widget tweetid="${id}"></twitter-widget>`;
+  }
+
   throw new Error('Invalid embed URL');
 };
 
