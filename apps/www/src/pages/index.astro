@@ -1,11 +1,27 @@
 ---
-import Profile from '@components/Profile.astro';
 import Layout from '@layouts/Layout.astro';
+import * as profile from '@content/profile.md';
+import Markdown from '@components/Markdown.astro';
 ---
 
 <Layout>
   <div class="prose">
     <h1>プロフィール</h1>
   </div>
-  <Profile />
+  <div
+    class="flex flex-col items-center gap-x-6 gap-y-3 mb-8 md:flex-row"
+  >
+    <img
+      class="w-32 aspect-square rounded"
+      src={profile.frontmatter.avatarUrl}
+      alt="しもちぃのアバター画像"
+    />
+    <div class="grid gap-y-1 md:text-left text-center">
+      <p class="text-xl font-medium">simochee</p>
+      <p class="text-description text-sm">フロントエンドエンジニア</p>
+    </div>
+  </div>
+  <div class="prose">
+    <Markdown content={profile.rawContent()} />
+  </div>
 </Layout>
