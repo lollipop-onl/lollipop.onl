@@ -12,6 +12,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: volta-cli/action@v4
+      - name: Enable pnpm
+        run: corepack enable pnpm
       - name: Install dependencies
         run: pnpm install
       - name: Build
