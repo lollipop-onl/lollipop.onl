@@ -18,13 +18,6 @@ export default defineConfig({
       },
     }),
     sitemap(),
-    robotsTxt({
-      policy: [
-        {
-          userAgent: '*',
-          disallow: ['/editor'],
-        },
-      ],
-    }),
+    robotsTxt(),
   ],
 });
