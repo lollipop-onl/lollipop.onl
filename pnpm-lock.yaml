@@ -29,6 +29,15 @@ importers:
 
   apps/editor:
     dependencies:
+      '@monaco-editor/react':
+        specifier: ^4.5.2
+        version: 4.5.2(monaco-editor@0.41.0)(react-dom@18.2.0)(react@18.2.0)
+      microcms-field-extension-api:
+        specifier: ^1.0.0
+        version: 1.0.0
+      monaco-editor:
+        specifier: ^0.41.0
+        version: 0.41.0
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -38,6 +47,9 @@ importers:
       react-router-dom:
         specifier: ^6.15.0
         version: 6.15.0(react-dom@18.2.0)(react@18.2.0)
+      react-use:
+        specifier: ^17.4.0
+        version: 17.4.0(react-dom@18.2.0)(react@18.2.0)
     devDependencies:
       '@tsconfig/vite-react':
         specifier: ^2.0.0
