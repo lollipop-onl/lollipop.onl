@@ -18,6 +18,9 @@ jobs:
         run: corepack enable pnpm
       - name: Install dependencies
         run: pnpm install
+        env:
+          MICROCMS_SERVICE_DOMAIN: ${{ vars.MICROCMS_SERVICE_DOMAIN }}
+          MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY }}
       - name: Build
         run: pnpm build -F www
       - uses: cloudflare/pages-action@v1
