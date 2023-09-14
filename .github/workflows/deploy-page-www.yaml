@@ -23,6 +23,7 @@ jobs:
         env:
           MICROCMS_SERVICE_DOMAIN: ${{ vars.MICROCMS_SERVICE_DOMAIN }}
           MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY }}
+          PUBLIC_WORKER_OGP_ENDPOINT: ${{ vars.WORKER_OGP_ENDPOINT }}
       - uses: cloudflare/pages-action@v1
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
