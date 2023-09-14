@@ -11,7 +11,9 @@ jobs:
       deployments: write
     steps:
       - uses: actions/checkout@v4
-      - uses: volta-cli/action@v4
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20
       - name: Enable pnpm
         run: corepack enable pnpm
       - name: Install dependencies
