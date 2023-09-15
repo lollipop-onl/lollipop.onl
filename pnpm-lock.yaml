@@ -158,12 +158,12 @@ importers:
       marked-extensions:
         specifier: workspace:^
         version: link:../../packages/marked-extensions
+      marked-gfm-heading-id:
+        specifier: ^3.0.8
+        version: 3.0.8(marked@8.0.1)
       microcms-client:
         specifier: workspace:^
         version: link:../../packages/microcms-client
-      microcms-field-extensions:
-        specifier: workspace:^
-        version: link:../../packages/microcms-field-extensions
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -3288,6 +3288,15 @@ packages:
 
   /markdown-table@3.0.3:
     resolution: {integrity: sha512-Z1NL3Tb1M9wH4XESsCDEksWoKTdlUafKc4pt0GRwjUyXaCFZ+dc3g2erqB6zm3szA2IUSi7VnPI+o/9jnxh9hw==}
+    dev: false
+
+  /marked-gfm-heading-id@3.0.8(marked@8.0.1):
+    resolution: {integrity: sha512-JDKp7tqU0QYHGz9xBWiZGfiCPNcvg0PvNvRr6XvRTgIg4S4etZxns7+ez+YtREU8iuQJC0V6vLTae9n8FH6gxQ==}
+    peerDependencies:
+      marked: '>=4 <10'
+    dependencies:
+      github-slugger: 2.0.0
+      marked: 8.0.1
     dev: false
 
   /marked@8.0.1:

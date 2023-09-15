@@ -23,8 +23,8 @@
     "loadjs": "4.3.0-rc1",
     "marked": "^8.0.1",
     "marked-extensions": "workspace:^",
+    "marked-gfm-heading-id": "^3.0.8",
     "microcms-client": "workspace:^",
-    "microcms-field-extensions": "workspace:^",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "tailwind-merge": "^1.14.0"

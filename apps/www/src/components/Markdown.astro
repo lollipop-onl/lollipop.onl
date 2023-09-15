@@ -1,6 +1,7 @@
 ---
 import { Marked } from 'marked';
 import { linkCard, codeBlock, imageWithSize, embed } from 'marked-extensions';
+import { gfmHeadingId } from 'marked-gfm-heading-id';
 import 'highlight.js/styles/github.css';
 
 type Props = {
@@ -19,7 +20,7 @@ const marked = new Marked({
   },
 });
 
-marked.use(linkCard, codeBlock);
+marked.use(linkCard, codeBlock, gfmHeadingId());
 
 const html = marked.parse(content ?? '');
 ---
