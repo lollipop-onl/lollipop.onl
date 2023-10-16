@@ -14,6 +14,12 @@ const MENU_LINKS = [
     icon: 'icon-[carbon--blog]',
     activate: () => Astro.url.pathname.startsWith('/blog/'),
   },
+  {
+    title: 'ツール',
+    href: '/tools/',
+    icon: 'icon-[carbon--tool-box]',
+    activate: () => Astro.url.pathname.startsWith('/tools/'),
+  }
 ] satisfies Array<{
   title: string;
   href: string;

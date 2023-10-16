@@ -1,9 +1,9 @@
 ---
+import type { GetStaticPaths } from "astro";
+import { getBlogEntities } from 'microcms-client';
 import Layout from "@layouts/Layout.astro";
 import Article from '@components/Article.astro';
 import DisqusThread from "@components/DisqusThread.astro";
-import type { GetStaticPaths } from "astro";
-import { getBlogEntities } from 'microcms-client';
 
 export const getStaticPaths = (async () => {
   const { contents } = await getBlogEntities();

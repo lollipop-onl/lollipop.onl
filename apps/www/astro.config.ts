@@ -1,4 +1,5 @@
 import { defineConfig } from 'astro/config';
+import mdx from '@astrojs/mdx'
 import lit from '@astrojs/lit';
 import react from '@astrojs/react';
 import tailwind from '@astrojs/tailwind';
@@ -9,6 +10,7 @@ import robotsTxt from 'astro-robots-txt';
 export default defineConfig({
   site: 'https://simochee.net',
   integrations: [
+    mdx(),
     lit(),
     react(),
     tailwind(),

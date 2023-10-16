@@ -1,0 +1,50 @@
+---
+import type { GetStaticPaths } from "astro";
+import { getCollection, type CollectionEntry, getEntryBySlug } from 'astro:content';
+import Layout from "@layouts/Layout.astro";
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import PageHeading from '@components/PageHeading.astro';
+import AlertCard from "@components/AlertCard.astro";
+
+export const getStaticPaths = (async () => {
+  const collection = await getCollection('tools');
+  
+  return await Promise.all(collection.map(async ({ slug, data }) => ({
+    params: {
+      slug
+    },
+    props: {
+      slug,
+      frontmatter: data,
+    }
+  })))
+}) satisfies GetStaticPaths;
+
+type Props = {
+  slug: CollectionEntry<'tools'>['slug'];
+  frontmatter: CollectionEntry<'tools'>['data'];
+};
+
+const { slug, frontmatter } = Astro.props;
+
+const entry = await getEntryBySlug('tools', slug);
+const { Content } = await entry.render();
+---
+
+<Layout
+  title={frontmatter.title}
+  openGraph={{ type: 'article' }}
+>
+  <Breadcrumbs items={[{ title: 'ツール', href: '/tools/'}, {title:frontmatter.title}]} />
+  <PageHeading title={frontmatter.title} description={frontmatter.description} />
+  {!frontmatter.published && (
+    <div class="mt-8">
+      <AlertCard>
+        このツールは完成していません。動作しなかったり、利用中にデータが消えたりする可能性があります。
+      </AlertCard>
+      </div>
+  )}
+  <div class="prose">
+    <Content />
+  </div>
+</Layout>

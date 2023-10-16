@@ -3,6 +3,7 @@ import { getBlogEntities } from 'microcms-client';
 import ArticleCard from '@components/ArticleCard.astro';
 import Layout from '@layouts/Layout.astro';
 import Breadcrumbs from '@components/Breadcrumbs.astro';
+import PageHeading from '@components/PageHeading.astro';
 
 const { contents, totalCount } = await getBlogEntities();
 ---
@@ -12,8 +13,7 @@ const { contents, totalCount } = await getBlogEntities();
   openGraph={{ type: 'blog' }}
 >
   <Breadcrumbs items={[{ title: 'ブログ'}]} />
-  <h1 class="mt-16 mb-6 text-3xl font-medium leading-md md:text-4xl md:font-regular md:leading-sm">ブログ</h1>
-  <p class="text-description text-sm">{totalCount}件の記事</p>
+  <PageHeading title='ブログ' description={`${totalCount}件の記事`} />
   <ul class="grid gap-8 mt-8">
     {contents.map(({ id, category, title, publishedAt }) => (
       <li>

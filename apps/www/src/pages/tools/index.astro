@@ -1,0 +1,27 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '@layouts/Layout.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import PageHeading from '@components/PageHeading.astro';
+import ToolCard from '@components/ToolCard.astro';
+
+const collection = await getCollection('tools', ({ data }) => import.meta.env.DEV || data.published);
+---
+
+<Layout
+  title="ツール"
+>
+  <Breadcrumbs items={[{ title: 'ツール'}]} />
+  <PageHeading title='ツール' />
+  {collection.length ? (
+    <ul class="grid gap-8 mt-8">
+    {collection.map(({ slug, data }) => (
+    <li>
+      <ToolCard slug={slug} title={data.title} description={data.description} />
+      </li>    
+    ))}
+    </ul>
+  ) : (
+    <p class="mt-8 text-description">公開中のツールはありません</p>
+  )}
+</Layout>

@@ -1,4 +1,6 @@
 ---
+name: simochee
+role: フロントエンドエンジニア
 avatarUrl: https://www.gravatar.com/avatar/4f67370c6d70451972d3e07398e675f4?s=256
 ---
 
